@@ -9,11 +9,11 @@ async function main() {
     connection = await getDB();
     //Eliminamos las tablas existentes
     await connection.query('DROP TABLE IF EXISTS scouts;');
-    await connection.query('DROP TABLE IF EXISTS families;'); //tabla con datos del adulto responsable por el jugador
-    await connection.query('DROP TABLE IF EXISTS profiles;'); //tabla con los datos de los jugadores
-    await connection.query('DROP TABLE IF EXISTS skills;'); //tabla con los datos de los jugadores
-    await connection.query('DROP TABLE IF EXISTS videos;'); //tabla con los datos de los jugadores
-    await connection.query('DROP TABLE IF EXISTS agreements;'); //tabla con los datos de los jugadores
+    await connection.query('DROP TABLE IF EXISTS families;');
+    await connection.query('DROP TABLE IF EXISTS profiles;');
+    await connection.query('DROP TABLE IF EXISTS skills;');
+    await connection.query('DROP TABLE IF EXISTS videos;');
+    await connection.query('DROP TABLE IF EXISTS agreements;');
 
     //Crea tabla ojeadores
     await connection.query(`
