@@ -8,13 +8,10 @@ async function main() {
   try {
     connection = await getDB();
     //Eliminamos las tablas existentes
-    await connection.query('DROP TABLE IF EXISTS scouts;');
-    await connection.query('DROP TABLE IF EXISTS families;');
-    await connection.query('DROP TABLE IF EXISTS users;');
-    await connection.query('DROP TABLE IF EXISTS profiles;');
     await connection.query('DROP TABLE IF EXISTS skills;');
     await connection.query('DROP TABLE IF EXISTS videos;');
-    await connection.query('DROP TABLE IF EXISTS agreements;');
+    await connection.query('DROP TABLE IF EXISTS profiles;');
+    await connection.query('DROP TABLE IF EXISTS users;');
 
     //Crea tabla usuarios
     await connection.query(`
