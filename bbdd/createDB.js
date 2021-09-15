@@ -10,72 +10,50 @@ async function main() {
     //Eliminamos las tablas existentes
     await connection.query('DROP TABLE IF EXISTS scouts;');
     await connection.query('DROP TABLE IF EXISTS families;');
+    await connection.query('DROP TABLE IF EXISTS users;');
     await connection.query('DROP TABLE IF EXISTS profiles;');
     await connection.query('DROP TABLE IF EXISTS skills;');
     await connection.query('DROP TABLE IF EXISTS videos;');
     await connection.query('DROP TABLE IF EXISTS agreements;');
 
-    //Crea tabla ojeadores
+    //Crea tabla usuarios
     await connection.query(`
-      CREATE TABLE scouts(
+      CREATE TABLE users(
         id INT PRIMARY KEY AUTO_INCREMENT,
         email VARCHAR(100) UNIQUE NOT NULL,
         password VARCHAR(512) NOT NULL,
-        phone VARCHAR(15) NOT NULL,
-        club VARCHAR(50) NOT NULL,
         name VARCHAR(100),
-        description VARCHAR(400),
-        avatar VARCHAR(50),
         active BOOLEAN DEFAULT false,
         deleted BOOLEAN DEFAULT false,
-        role ENUM("scout", "family") DEFAULT "normal" NOT NULL,
+        role ENUM("admin", "family", "scout") NOT NULL,
         registrationCode VARCHAR(100),
         recoverCode VARCHAR(100),
         createdAt DATETIME NOT NULL,
         modifiedAt DATETIME
-      )
-    `);
-
-    // // Crear la tabla Familias
-    await connection.query(`
-        CREATE TABLE families (
-          id INT PRIMARY KEY AUTO_INCREMENT,
-          email VARCHAR(100) UNIQUE NOT NULL,
-          password VARCHAR(512) NOT NULL,
-          phone VARCHAR(15) NOT NULL,
-          name VARCHAR(100),
-          avatar VARCHAR(50),
-          active BOOLEAN DEFAULT false,
-          deleted BOOLEAN DEFAULT false,
-          role ENUM("admin", "normal") DEFAULT "normal" NOT NULL,
-          registrationCode VARCHAR(100),
-          recoverCode VARCHAR(100),
-          createdAt DATETIME NOT NULL,
-          modifiedAt DATETIME
-          )
+        )
         `);
 
     // Crear la tabla de perfiles de jugadores (confirmar atributo gender)
     await connection.query(`
-        CREATE TABLE profiles (
-        id INT PRIMARY KEY AUTO_INCREMENT,
-        name VARCHAR(50) NOT NULL,
-        idFamily INT NOT NULL,
-        FOREIGN KEY (idFamily) REFERENCES families (id),
-        actualClub VARCHAR (50) NOT NULL,
-        position VARCHAR (20) NOT NULL,
-        description VARCHAR (400),
-        birth DATE NOT NULL,
-        photo VARCHAR (50) NOT NULL,
-        gender ENUM ("MASC", "FEM", "OTRO") DEFAULT "OTRO" NOT NULL, 
-        avatar VARCHAR (50),
-        createdAt DATETIME NOT NULL,
-        modifiedAt DATETIME 
-        )        
-        `);
+    CREATE TABLE profiles (
+      id INT PRIMARY KEY AUTO_INCREMENT,
+      name VARCHAR(50) NOT NULL,
+      idUser INT NOT NULL,
+      FOREIGN KEY (idUser) REFERENCES users (id),
+      club VARCHAR (50) NOT NULL,
+      position VARCHAR (20) NOT NULL,
+      description VARCHAR (400),
+      birth DATE NOT NULL,
+      photo VARCHAR (50) NOT NULL,
+      category ENUM ("M", "F") NOT NULL, 
+      avatar VARCHAR (50),
+      createdAt DATETIME NOT NULL,
+      modifiedAt DATETIME 
+      )        
+      `);
     // Crear la tabla de perfiles de skills ()
     await connection.query(`
-        CREATE TABLE skills (
+      CREATE TABLE skills (
         id INT PRIMARY KEY AUTO_INCREMENT,
         skillName VARCHAR(50) NOT NULL,
         skillValues VARCHAR (20),
@@ -83,27 +61,15 @@ async function main() {
         FOREIGN KEY (idProfile) REFERENCES profiles (id)
         )        
         `);
-    // Crear la tabla de perfiles de videos
+    // Crear la tabla de perfiles de videos (utilizaremos enlaces de youtube)
     await connection.query(`
         CREATE TABLE videos (
-        id INT PRIMARY KEY AUTO_INCREMENT,
-        name VARCHAR(50) NOT NULL,
-        createdAt DATETIME NOT NULL,
-        idProfile INT NOT NULL,
-        FOREIGN KEY (idProfile) REFERENCES profiles (id)
-        )        
-        `);
-    // Crear la tabla de perfiles de contratos
-    await connection.query(`
-          CREATE TABLE agreements (
           id INT PRIMARY KEY AUTO_INCREMENT,
-          idScout INT NOT NULL,
-          FOREIGN KEY (idScout) REFERENCES scouts (id),
-          idFamily INT NOT NULL,
-          FOREIGN KEY (idFamily) REFERENCES families (id),
+          name VARCHAR(50) NOT NULL,
+          url VARCHAR (500) NOT NULL, 
+          createdAt DATETIME NOT NULL,
           idProfile INT NOT NULL,
-          FOREIGN KEY (idProfile) REFERENCES profiles (id),
-          createdAt DATETIME NOT NULL
+          FOREIGN KEY (idProfile) REFERENCES profiles (id)
           )        
           `);
   } catch (error) {
@@ -115,3 +81,36 @@ async function main() {
   }
 }
 main();
+
+// // Crear la tabla Familias
+// await connection.query(`
+//     CREATE TABLE families (
+//       id INT PRIMARY KEY AUTO_INCREMENT,
+//       email VARCHAR(100) UNIQUE NOT NULL,
+//       password VARCHAR(512) NOT NULL,
+//       phone VARCHAR(15) NOT NULL,
+//       name VARCHAR(100),
+//       avatar VARCHAR(50),
+//       active BOOLEAN DEFAULT false,
+//       deleted BOOLEAN DEFAULT false,
+//       role ENUM("admin", "normal") DEFAULT "normal" NOT NULL,
+//       registrationCode VARCHAR(100),
+//       recoverCode VARCHAR(100),
+//       createdAt DATETIME NOT NULL,
+//       modifiedAt DATETIME
+//       )
+//     `);
+
+// Crear la tabla de perfiles de contratos
+// await connection.query(`
+//       CREATE TABLE agreements (
+//       id INT PRIMARY KEY AUTO_INCREMENT,
+//       idScout INT NOT NULL,
+//       FOREIGN KEY (idScout) REFERENCES scouts (id),
+//       idFamily INT NOT NULL,
+//       FOREIGN KEY (idFamily) REFERENCES families (id),
+//       idProfile INT NOT NULL,
+//       FOREIGN KEY (idProfile) REFERENCES profiles (id),
+//       createdAt DATETIME NOT NULL
+//       )
+//       `);
