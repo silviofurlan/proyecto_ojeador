@@ -42,8 +42,8 @@ const newProfileSchema = Joi.object().keys({
     }),
   birthYear: Joi.number()
     .required()
-    .min(2003) //AUTOMATIZAR
-    .max(2015) //AUTOMATIZAR
+    .min(2000) //AUTOMATIZAR
+    .max(2016) //AUTOMATIZAR
     .error((errors) => {
       if (
         errors[0].code === 'any.required' ||
