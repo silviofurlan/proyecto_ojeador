@@ -23,8 +23,8 @@ const addProfilePhoto = async (req, res, next) => {
       [idProfile]
     );
 
-    // Si hay, foto lanzamos un error.
-    if (photos.length >= 1) {
+    // Si hay 3 fotos lanzamos un error.
+    if (photos.length >= 3) {
       const error = new Error('Este perfil ya tiene 1 foto');
       error.httpStatus = 403;
       throw error;

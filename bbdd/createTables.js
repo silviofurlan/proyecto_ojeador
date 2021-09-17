@@ -58,7 +58,8 @@ async function main() {
         skillName VARCHAR(50) NOT NULL,
         skillValues VARCHAR (20),
         idProfile INT NOT NULL,
-        FOREIGN KEY (idProfile) REFERENCES profiles (id)
+        FOREIGN KEY (idProfile) REFERENCES profiles (id),
+        createdAt DATETIME NOT NULL
         )        
         `);
     // Crear la tabla de perfiles de videos (utilizaremos enlaces de youtube)
@@ -83,6 +84,19 @@ async function main() {
           createdAt DATETIME NOT NULL
           )        
           `);
+
+    // Insertar el usuario administrador.
+    await connection.query(`
+            INSERT INTO users (email, password, name, active, role, createdAt)
+            VALUES (
+                "silviofurlan@gmail.com",
+                SHA2("123456", 512),
+                "Sivio",
+                true,
+                "admin",
+                "${formatDate(new Date())}"
+            )
+        `);
 
     //Crear usuarios fakes de prueba role familia
     const FAMILY_USERS = 10;
@@ -125,36 +139,3 @@ async function main() {
   }
 }
 main();
-
-// // Crear la tabla Familias
-// await connection.query(`
-//     CREATE TABLE families (
-//       id INT PRIMARY KEY AUTO_INCREMENT,
-//       email VARCHAR(100) UNIQUE NOT NULL,
-//       password VARCHAR(512) NOT NULL,
-//       phone VARCHAR(15) NOT NULL,
-//       name VARCHAR(100),
-//       avatar VARCHAR(50),
-//       active BOOLEAN DEFAULT false,
-//       deleted BOOLEAN DEFAULT false,
-//       role ENUM("admin", "normal") DEFAULT "normal" NOT NULL,
-//       registrationCode VARCHAR(100),
-//       recoverCode VARCHAR(100),
-//       createdAt DATETIME NOT NULL,
-//       modifiedAt DATETIME
-//       )
-//     `);
-
-// Crear la tabla de perfiles de contratos
-// await connection.query(`
-//       CREATE TABLE agreements (
-//       id INT PRIMARY KEY AUTO_INCREMENT,
-//       idScout INT NOT NULL,
-//       FOREIGN KEY (idScout) REFERENCES scouts (id),
-//       idFamily INT NOT NULL,
-//       FOREIGN KEY (idFamily) REFERENCES families (id),
-//       idProfile INT NOT NULL,
-//       FOREIGN KEY (idProfile) REFERENCES profiles (id),
-//       createdAt DATETIME NOT NULL
-//       )
-//       `);

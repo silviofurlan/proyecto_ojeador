@@ -6,8 +6,8 @@ const newProfile = async (req, res, next) => {
   let connection;
 
   try {
-    // Obtenemos el id del usuario.
-    const { idUser } = req.params;
+    // Obtenemos el id del usuario que está creando el perfil.
+    const idReqUser = req.userAuth.id;
 
     connection = await getDB();
     // Validamos los datos del body.
@@ -25,7 +25,7 @@ const newProfile = async (req, res, next) => {
              VALUES(?, ?, ?, ?, ?, ?, ?, ?)
          `,
       [
-        idUser,
+        idReqUser,
         name,
         position,
         birthYear,
@@ -38,7 +38,7 @@ const newProfile = async (req, res, next) => {
     // Obtenemos el id del perfil creado.
     const idProfile = newProfile.insertId;
     // Comprobamos si "req.files" existe y si tiene contenido. Si es así guardamos la foto.
-    if (req.files && Object.keys(req.files).length > 1) {
+    if (req.files && Object.keys(req.files).length > 0) {
       // Recorremos los valores de "req.files".
       for (const photo of Object.values(req.files).slice(0, 3)) {
         // Variable que almacenará el nombre de la imagen.

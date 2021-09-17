@@ -4,9 +4,14 @@ const sharp = require('sharp');
 const crypto = require('crypto');
 const uuid = require('uuid');
 const path = require('path');
+const sgMail = require('@sendgrid/mail');
 
 const { UPLOADS_DIRECTORY, SENDGRID_API_KEY, SENDGRID_FROM } = process.env;
 const uploadsDir = path.join(__dirname, UPLOADS_DIRECTORY);
+
+// Asignamos el API Key a Sendgrid.
+sgMail.setApiKey(SENDGRID_API_KEY);
+
 /**
  * ####################
  * ## getRandomValue ##
@@ -68,6 +73,53 @@ async function savePhoto(image) {
 function formatDate(date) {
   return format(date, 'yyyy-MM-dd HH:mm:ss');
 }
+/**
+ * ##############
+ * ## sendMail ##
+ * ##############
+ */
+async function sendMail({ to, subject, body }) {
+  // Preparamos el mensaje.
+  const msg = {
+    to,
+    from: SENDGRID_FROM,
+    subject,
+    text: body,
+    html: `
+          <div>
+              <h1>${subject}</h1>
+              <p>${body}</p>
+          </div>
+      `,
+  };
+
+  // Enviamos el mensaje.
+  await sgMail.send(msg);
+}
+
+/**
+ * #################
+ * ## verifyEmail ##
+ * #################
+ */
+async function verifyEmail(email, registrationCode) {
+  // Mensaje que enviaremos al usuario.
+  const emailBody = `
+      Te acabas de registrar en f11talents.
+      Pulsa en este link para verificar tu cuenta: ${process.env.PUBLIC_HOST}/users/validate/${registrationCode}
+  `;
+
+  try {
+    // Enviamos el mensaje al correo del usuario.
+    await sendMail({
+      to: email,
+      subject: 'Activa tu usuario en f11talents',
+      body: emailBody,
+    });
+  } catch (error) {
+    throw new Error('Error enviando el mensaje de verificación');
+  }
+}
 
 /**
  * ##############
@@ -87,6 +139,8 @@ module.exports = {
   formatDate,
   getRandomValue,
   generateRandomString,
+  sendMail,
+  verifyEmail,
   validate,
   savePhoto,
 };
