@@ -40,13 +40,14 @@ async function main() {
       id INT PRIMARY KEY AUTO_INCREMENT,
       name VARCHAR(50) NOT NULL,
       idUser INT NOT NULL,
-      FOREIGN KEY (idUser) REFERENCES users (id),
+      FOREIGN KEY (idUser) REFERENCES users (id) ON DELETE CASCADE,
       club VARCHAR (50),
       position VARCHAR (20) NOT NULL,
       description VARCHAR (400) NOT NULL,
       birthYear INT (255) NOT NULL,
       category ENUM ("M", "F") NOT NULL, 
       avatar VARCHAR (50),
+      deleted BOOLEAN DEFAULT false,
       createdAt DATETIME NOT NULL,
       modifiedAt DATETIME 
       )        
@@ -56,9 +57,8 @@ async function main() {
       CREATE TABLE skills (
         id INT PRIMARY KEY AUTO_INCREMENT,
         skillName VARCHAR(50) NOT NULL,
-        skillValues VARCHAR (20),
         idProfile INT NOT NULL,
-        FOREIGN KEY (idProfile) REFERENCES profiles (id),
+        FOREIGN KEY (idProfile) REFERENCES profiles (id) ON DELETE CASCADE,
         createdAt DATETIME NOT NULL
         )        
         `);
@@ -70,7 +70,7 @@ async function main() {
           url VARCHAR (500) NOT NULL, 
           createdAt DATETIME NOT NULL,
           idProfile INT NOT NULL,
-          FOREIGN KEY (idProfile) REFERENCES profiles (id)
+          FOREIGN KEY (idProfile) REFERENCES profiles (id) ON DELETE CASCADE
           )        
           `);
 
@@ -80,7 +80,7 @@ async function main() {
           id INT PRIMARY KEY AUTO_INCREMENT,
           name VARCHAR(50) NOT NULL, 
           idProfile INT NOT NULL,
-          FOREIGN KEY (idProfile) REFERENCES profiles (id),
+          FOREIGN KEY (idProfile) REFERENCES profiles (id) ON DELETE CASCADE,
           createdAt DATETIME NOT NULL
           )        
           `);

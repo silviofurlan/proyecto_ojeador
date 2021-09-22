@@ -11,7 +11,7 @@ const canEdit = async (req, res, next) => {
 
     // Obtenemos el id de usuario dueño del perfil.
     const [owner] = await connection.query(
-      `SELECT idUser FROM profile WHERE id = ?`,
+      `SELECT idUser FROM profiles WHERE id = ?`,
       [idProfile]
     );
 
@@ -19,6 +19,7 @@ const canEdit = async (req, res, next) => {
     // es el administrador lanzamos un error.
     if (owner[0].idUser !== req.userAuth.id && req.userAuth.role !== 'admin') {
       const error = new Error('No tienes suficientes permisos');
+      console.log(req.userAuth.role);
       error.httpStatus = 401;
       throw error;
     }

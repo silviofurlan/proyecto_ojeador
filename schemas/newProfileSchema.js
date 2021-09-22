@@ -42,7 +42,7 @@ const newProfileSchema = Joi.object().keys({
     }),
   birthYear: Joi.number()
     .required()
-    .min(2000) //AUTOMATIZAR
+    .min(2000) //AUTOMATIZAR y añadir error si el formato de la fecha es incorrecto
     .max(2016) //AUTOMATIZAR
     .error((errors) => {
       if (
@@ -68,6 +68,15 @@ const newProfileSchema = Joi.object().keys({
         errors[0].code === 'string.empty'
       )
         return new Error('Se requiere un Club');
+    }),
+  skill: Joi.string()
+    .required()
+    .error((errors) => {
+      if (
+        errors[0].code === 'any.required' ||
+        errors[0].code === 'string.empty'
+      )
+        return new Error('Se requiere una Skill');
     }),
 });
 
