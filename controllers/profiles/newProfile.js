@@ -6,20 +6,35 @@ const newProfile = async (req, res, next) => {
   let connection;
 
   try {
+    connection = await getDB();
     // Obtenemos el id del usuario que está creando el perfil.
     const idReqUser = req.userAuth.id;
 
-    connection = await getDB();
+    // Comprobamos cuántos perfiles tiene la cuenta.
+    const [profiles] = await connection.query(
+      `SELECT name FROM profiles WHERE idUser = ?`,
+      [idReqUser]
+    );
+
+    // Si hay 3 fotos lanzamos un error.
+    if (profiles.length >= 3) {
+      const error = new Error('Solo puedes tener 3 perfiles');
+      error.httpStatus = 403;
+      throw error;
+    }
+
     // Validamos los datos del body.
     await validate(newProfileSchema, req.body);
 
     // Obtenemos las propiedades del body.
-    const { name, position, birthYear, category, description, club } = req.body;
+    const { name, position, birthYear, category, description, club, skill } =
+      req.body;
     // Fecha de creación.
     const createdAt = formatDate(new Date());
+    console.log(skill);
 
     // Creamos el perfil y guardamos el valor que retorna "connection.query".
-    const [newProfile] = await connection.query(
+    await connection.query(
       `
              INSERT INTO profiles (idUser, name, position, birthYear, category, description, club, createdAt)
              VALUES(?, ?, ?, ?, ?, ?, ?, ?)
@@ -35,31 +50,6 @@ const newProfile = async (req, res, next) => {
         createdAt,
       ]
     );
-    // Obtenemos el id del perfil creado.
-    const idProfile = newProfile.insertId;
-    // Comprobamos si "req.files" existe y si tiene contenido. Si es así guardamos la foto.
-    if (req.files && Object.keys(req.files).length > 0) {
-      // Recorremos los valores de "req.files".
-      for (const photo of Object.values(req.files).slice(0, 3)) {
-        // Variable que almacenará el nombre de la imagen.
-        let photoName;
-
-        try {
-          // Guardamos la foto en el servidor y obtenemos el nombre de la misma.
-          photoName = await savePhoto(photo);
-        } catch (_) {
-          const error = new Error('Formato de archivo incorrecto');
-          error.httpStatus = 400;
-          throw error;
-        }
-
-        // Guardamos la foto.
-        await connection.query(
-          `INSERT INTO photos (name, idProfile, createdAt) VALUES (?, ?, ?)`,
-          [photoName, idProfile, createdAt]
-        );
-      }
-    }
 
     res.send({
       status: 'ok',

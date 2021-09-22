@@ -1,5 +1,5 @@
 const getDB = require('../../bbdd/getDB');
-const { savePhoto } = require('../../helpers');
+const { savePhoto, formatDate } = require('../../helpers');
 
 const addProfilePhoto = async (req, res, next) => {
   let connection;
@@ -19,16 +19,19 @@ const addProfilePhoto = async (req, res, next) => {
 
     // Comprobamos cuántas fotos tiene la entrada.
     const [photos] = await connection.query(
-      `SELECT photo FROM profiles WHERE idProfile = ?`,
+      `SELECT name FROM photos WHERE idProfile = ?`,
       [idProfile]
     );
 
     // Si hay 3 fotos lanzamos un error.
     if (photos.length >= 3) {
-      const error = new Error('Este perfil ya tiene 1 foto');
+      const error = new Error('Este perfil ya tiene  fotos');
       error.httpStatus = 403;
       throw error;
     }
+
+    // Fecha de creación.
+    const createdAt = formatDate(new Date());
 
     // Variable que almacenará el nombre de la imagen.
     let photoName;
@@ -43,9 +46,10 @@ const addProfilePhoto = async (req, res, next) => {
     }
 
     // Guardamos la foto.
-    await connection.query(`INSERT INTO profiles (photo) VALUES (?)`, [
-      photoName,
-    ]);
+    await connection.query(
+      `INSERT INTO photos (name, idProfile, createdAt) VALUES (?, ?, ?)`,
+      [photoName, idProfile, createdAt]
+    );
 
     res.send({
       status: 'ok',

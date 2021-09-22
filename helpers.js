@@ -1,5 +1,5 @@
 const { format } = require('date-fns');
-const { ensureDir } = require('fs-extra');
+const { ensureDir, unlink } = require('fs-extra');
 const sharp = require('sharp');
 const crypto = require('crypto');
 const uuid = require('uuid');
@@ -63,6 +63,19 @@ async function savePhoto(image) {
 
   // Retornamos el nombre del fichero.
   return imageName;
+}
+
+/**
+ * #################
+ * ## deletePhoto ##
+ * #################
+ */
+async function deletePhotoFile(photoName) {
+  // Creamos la ruta absoluta al archivo.
+  const photoPath = path.join(uploadsDir, photoName);
+
+  // Eliminamos la foto del disco.
+  await unlink(photoPath);
 }
 
 /**
@@ -135,6 +148,30 @@ async function validate(schema, data) {
   }
 }
 
+/**
+ * #################
+ * ## sendContractEmail ##
+ * #################
+ */
+async function sendContractEmail(email, name, aceptationCode) {
+  // Mensaje que enviaremos al usuario.
+  const emailBody = `
+      ${name} acaba de recibir una oferta de contratación en f11talents
+      Pulsa en este link aceptarla: ${process.env.PUBLIC_HOST}/users/contracts/${aceptationCode}
+  `;
+
+  try {
+    // Enviamos el mensaje al correo del usuario.
+    await sendMail({
+      to: email,
+      subject: 'Has recibido una oferta de contratación',
+      body: emailBody,
+    });
+  } catch (error) {
+    throw new Error('Error enviando la oferta de contratación');
+  }
+}
+
 module.exports = {
   formatDate,
   getRandomValue,
@@ -143,4 +180,6 @@ module.exports = {
   verifyEmail,
   validate,
   savePhoto,
+  deletePhotoFile,
+  sendContractEmail,
 };
