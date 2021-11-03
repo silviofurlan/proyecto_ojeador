@@ -58,7 +58,7 @@ function App() {
                         </li>
                     </ul>
 
-                    <div>
+                    <div className='auth'>
                         {token ? (
                             <p>
                                 Estás logueado{" "}
