@@ -62,38 +62,39 @@ const newProfile = async (req, res, next) => {
       [skill, newProfileId, createdAt]
     );
 
-    //comprobamos si el hay un avatar
-    if (req.files.avatar) {
-      const avatar = await savePhoto(req.files.avatar);
-      await connection.query(
-        `UPDATE profiles SET avatar = ?, modifiedAt = ? WHERE id = ? `,
-        [avatar, formatDate(new Date()), newProfileId]
-      );
-    }
+    // //comprobamos si se envía hay un avatar
+    // if (req.files.file.avatar) {
+    //   const avatar = await savePhoto(req.files);
+    //   await connection.query(
+    //     `UPDATE profiles SET avatar = ?, modifiedAt = ? WHERE id = ? `,
+    //     [avatar, formatDate(new Date()), newProfileId]
+    //   );
+    // }
 
-    // Comprobamos si "req.files" existe y si tiene contenido. Si es así guardamos .
-    if (req.files && Object.keys(req.files).length > 0) {
-      // Recorremos los valores de "req.files".
-      for (const photo of Object.values(req.files).slice(0, 3)) {
-        // Variable que almacenará el nombre de la imagen.
-        let photoName;
+    // // Comprobamos si "req.files" existe y si tiene contenido. Si es así guardamos .
+    // if (req.files && Object.keys(req.files).length > 0) {
+    //   // Recorremos los valores de "req.files".
+    //   for (const photo of Object.values(req.files).slice(0, 3)) {
+    //     // Variable que almacenará el nombre de la imagen.
+    //     let photoName;
 
-        try {
-          // Guardamos la foto en el servidor y obtenemos el nombre de la misma.
-          photoName = await savePhoto(photo);
-        } catch (_) {
-          const error = new Error('Formato de archivo incorrecto');
-          error.httpStatus = 400;
-          throw error;
-        }
+    //     try {
+    //       // Guardamos la foto en el servidor y obtenemos el nombre de la misma.
+    //       photoName = await savePhoto(photo);
+    //     } catch (_) {
+    //       const error = new Error('Formato de archivo incorrecto');
+    //       error.httpStatus = 400;
+    //       throw error;
+    //     }
 
-        // Guardamos la foto.
-        await connection.query(
-          `INSERT INTO photos (name, idProfile, createdAt) VALUES (?, ?, ?)`,
-          [photoName, newProfileId, formatDate(new Date())]
-        );
-      }
-    }
+    //     // Guardamos la foto.
+    //     await connection.query(
+    //       `INSERT INTO photos (name, idProfile, createdAt) VALUES (?, ?, ?)`,
+    //       [photoName, newProfileId, formatDate(new Date())]
+    //     );
+    //   }
+    // }
+    // console.log('req', req.files);
 
     res.send({
       status: 'ok',

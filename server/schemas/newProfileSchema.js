@@ -5,12 +5,6 @@ const newProfileSchema = Joi.object().keys({
     .max(500)
     .error((errors) => {
       switch (errors[0].code) {
-        case 'any.required':
-          return new Error('Se requiere una descripción');
-
-        case 'string.empty':
-          return new Error('Se requiere una descripción');
-
         default:
           return new Error('La descripción debe ser inferior a 500 caracteres');
       }

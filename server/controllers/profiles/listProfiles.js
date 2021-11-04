@@ -31,7 +31,7 @@ const listProfiles = async (req, res, next) => {
     if (search) {
       [results] = await connection.query(
         `
-                    SELECT profiles.*, group_concat(skills.skillName) as skills, group_concat(skills.id) as skillsID
+                    SELECT profiles.name, profiles..id, profiles.idUser, profiles.category, profiles.position, profiles.birthDate, group_concat(skills.skillName) as skills, group_concat(skills.id) as skillsID
                     FROM profiles
                     JOIN skills ON skills.idProfile = profiles.id
                     WHERE profiles.position LIKE ? OR profiles.club LIKE ? OR skills.skillName LIKE ?

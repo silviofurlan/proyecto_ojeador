@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { LoginForm } from './components/LoginForm';
+
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 // import { get } from './api/api';
 
@@ -15,24 +15,8 @@ import ContactUs from './components/pages/ContactUs';
 import MyAccount from './components/pages/MyAccount';
 import { useContext } from 'react/cjs/react.development';
 import { AuthTokenContext } from '.';
-
-// function App() {
-// useEffect(() => {
-//   get('http://localhost:4000/profiles', (body) => setProfilesList(body));
-// }, []);
-// <Router>
-//   {/* <Navbar />*/}
-//   <Switch>
-//     {/* <Route path='/' exact component={Home} /> */}
-//     <Route path='/busqueda' component={Search} />
-//     {/* <Route path='/nosotros' component={AboutUs} />
-//   <Route path='/contactos' component={ContactUs} />
-//   <Route path='/miCuenta' component={MyAccount} /> */}
-//     {/* <Route path='/registar' component={FormularioRegistro} /> */}
-//   </Switch>
-//   {/*<Footer /> */}
-// </Router>;
-// }
+import MyProfiles from './components/UserProfiles';
+import PlayerProfilePage from './components/pages/PlayerProfilePage';
 
 function App() {
   const { token, user, logout } = useContext(AuthTokenContext);
@@ -81,6 +65,10 @@ function App() {
           </Route>
           <Route path='/micuenta'>
             <MyAccount />
+            <MyProfiles />
+          </Route>
+          <Route path='/profile'>
+            <PlayerProfilePage id={30} />
           </Route>
           <Route path='/register'>
             <Register />

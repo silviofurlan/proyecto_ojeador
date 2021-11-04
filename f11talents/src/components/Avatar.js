@@ -1,15 +1,15 @@
 const Avatar = (props) => {
-  if (!props.avatar)
+  const avatar = props.avatar;
+
+  if (!avatar)
     return (
       <div id='Avatar'>
-        <img src={`http://localhost:4000/fotos/${avatar}`} alt='Avatar' />
-        Sin avatar
+        <img src={`http://localhost:4000/fotos/placeholder.png`} alt='Avatar' />
       </div>
     );
-  const { avatar } = props.avatar;
   return (
     <div id='Avatar'>
-      <img src={``} alt='Avatar' />
+      <img src={`http://localhost:4000/fotos/${avatar}`} alt='Avatar' />
     </div>
   );
 };

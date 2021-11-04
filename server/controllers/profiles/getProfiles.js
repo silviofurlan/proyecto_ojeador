@@ -15,13 +15,13 @@ const getProfile = async (req, res, next) => {
       `
                 SELECT profiles.*, group_concat(skills.skillName) as skills, group_concat(skills.id) as skillsID, group_concat(photos.name) as photos, group_concat(photos.id) as photosID
                 FROM profiles
-                JOIN skills ON skills.idProfile = profiles.id
-                JOIN photos ON photos.idProfile = profiles.id
+                LEFT JOIN skills ON skills.idProfile = profiles.id
+                LEFT JOIN photos ON photos.idProfile = profiles.id
                 WHERE profiles.id = ?
             `,
       [idProfile]
     );
-
+    console.log('PROFILE', profile);
     res.send({
       status: 'ok',
       profile,

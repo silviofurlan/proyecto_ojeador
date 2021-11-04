@@ -43,7 +43,7 @@ async function main() {
       position VARCHAR (20) NOT NULL,
       description VARCHAR (400) NOT NULL,
       birthDate DATE NOT NULL,
-      category ENUM ("M", "F") NOT NULL, 
+      category VARCHAR (50) NOT NULL, 
       avatar VARCHAR (50),
       deleted BOOLEAN DEFAULT false,
       createdAt DATETIME NOT NULL,
