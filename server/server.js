@@ -46,6 +46,7 @@ const {
   recoverPass,
   deleteUser,
   editUser,
+  getUserProfiles,
 } = require('./controllers/users');
 
 //Logger
@@ -164,6 +165,9 @@ app.get('/users/:idUser', authUser, userExists, getUser);
 
 //Edita un usuario
 app.put('/user/:idUser', authUser, userExists, editUser);
+
+//Exibe los perfiles que tiene un usuario
+app.get('/users/:idUser/profiles', authUser, userExists, getUserProfiles);
 
 //Edita la contraseña del usuario
 app.put('/users/:idUser/password', authUser, userExists, editPass);

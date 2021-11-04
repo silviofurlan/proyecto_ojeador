@@ -12,7 +12,7 @@ const getUser = async (req, res, next) => {
     // Obtenemos el id del usuario que hace la request.
     const idReqUser = req.userAuth.id;
     let userInfo;
-    if (Number(idUser) === idReqUser) {
+    if (Number(idUser) === idReqUser || req.userAuth.role === 'admin') {
       // Obtenemos los datos del usuario.
       const [user] = await connection.query(
         `SELECT users.id, users.name, users.email, group_concat(profiles.name) as profiles, group_concat(profiles.id) as profileId
@@ -22,10 +22,17 @@ const getUser = async (req, res, next) => {
         [idUser]
       );
 
+      const profilesName = new Set([user[0].profiles]);
+      const profilesId = new Set([user[0].profileId]);
+
       // Objeto con la info del usuario.
 
-      userInfo = user;
-      console.log('pruebba');
+      userInfo = {
+        name: user[0].name,
+        email: user[0].email,
+        profilesName: Array.from(profilesName),
+        profilesId: Array.from(profilesId),
+      };
     }
     res.send({
       status: 'ok',

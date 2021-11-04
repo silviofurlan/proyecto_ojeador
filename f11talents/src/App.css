@@ -20,7 +20,7 @@
 #Avatar {
   background-color: #61dafb;
 }
-#PlayerProfileCard {
+#PlayerCard {
   display: flex;
   flex-direction: column;
   margin: 10px;

@@ -1,4 +1,4 @@
-import { PlayerProfileCard } from '../ProfileCard';
+import { PlayerCard } from '../PlayerCard';
 import { useListProfiles } from '../../hooks/useListProfiles';
 
 export default function Search() {
@@ -9,7 +9,7 @@ export default function Search() {
         <div className='main'>
           {profilesList.length > 0
             ? profilesList.map((profile) => (
-                <PlayerProfileCard
+                <PlayerCard
                   resume={profile}
                   avatar={profile.avatar}
                   key={profile.id}
