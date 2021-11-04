@@ -1,4 +1,516 @@
-.App {
+/* @import 'normalize.css'; */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700&display=swap');
+@import 'icons.css';
+@import 'header.css';
+@import 'footer.css';
+
+@font-face {
+    font-family:'Amatic SC';
+    src: url('fonts/AmaticSC-Bold.eot');
+    src: url('fonts/AmaticSC-Bold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/AmaticSC-Bold.woff2') format('woff2'),
+		url('fonts/AmaticSC-Bold.woff') format('woff'),
+		url('fonts/AmaticSC-Bold.ttf') format('truetype'),
+		url('fonts/AmaticSC-Bold.svg#Amatic SC Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-2044;
+}
+
+@font-face {
+    font-family:'Amatic SC';
+    src: url('fonts/AmaticSC-Regular.eot');
+	src: url('fonts/AmaticSC-Regular.eot?#iefix') format('embedded-opentype'),
+		url('fonts/AmaticSC-Regular.woff2') format('woff2'),
+		url('fonts/AmaticSC-Regular.woff') format('woff'),
+		url('fonts/AmaticSC-Regular.ttf') format('truetype'),
+		url('fonts/AmaticSC-Regular.svg#Amatic SC Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-2044;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+h1, h2{
+    font-family: 'Amatic SC', 'Courier New', Courier, monospace;
+    color: #7fc97f;
+    font-weight: bold;
+}
+
+/* quita los puntos de la lista. Con hijo directo */ 
+section > ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+/******************* Seccion Banner *****************/
+
+#intro {
+    margin-top: 100px;
+    min-height: 40vh;
+    background-image: url('images/header-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.50);
+}
+
+
+/* h1 está por debajo del fondo */
+#intro h1 {
+    text-transform: uppercase;
+    position: relative;
+    color: white;
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#intro h1 span{
+    animation: fadeEnter .5s ease both 0.25s;
+    display: block;
+}
+
+
+#intro .logo{
+    font-size: 1em;
+}
+
+#intro h1 strong {
+    display: block;
+    color: #7fc97f;
+    font-family:'Amatic SC';
+    text-align: center;
+}
+
+#intro .logo{
+    animation: fadeEnter .5s ease both 0.25s;
+    display: block;
+    justify-content: center;
+ 
+}
+
+
+/******************* main *****************/
+main section h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+main > section {
+    padding: 10px;
+}
+
+/******************* Seccion 1 *****************/
+#contenedor-Registro{
+    background-color: rgb(110, 105, 105);
+    display: flex;
+    margin: auto;
+    max-width: 960px;
+    min-height: 480px;
+
+} 
+
+#contenedor-Registro > section {
+    padding: 10px;
+} 
+
+.formRegistro h1 {
+    color: white;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    font-size: 40px;
+
+} 
+
+.formRegistro {
+    background-color:rgb(79, 81, 79);
+    border-radius: 10px;
+    width: 100%;
+    height: 550px;
+    
+}
+
+
+/* FORMULARIO REGISTRO */
+
+.formRegistro label{
+    font-size: bold;
+    display: block;
+    margin: 1em 0;
+
+
+}
+
+.formRegistro input {
+    background-color: gray;
+    display: inline-block;
+    margin: 0 auto; 
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    padding: 1em;
+    outline: none;
+    color: white;
+}
+
+.formRegistro input::placeholder {
+    color: darkgray;
+}
+
+.formRegistro button {
+    background:  gray;
+    color: white;
+    bottom: gray;
+    display: block;
+    margin: 2rem auto; 
+    font-size: bold;
+    border-radius: 10px;
+    border: none;
+    padding: 1em 16em;
+
+}
+
+/******************* Seccion 2 *****************/
+#contenedor-CasosBusqueda{
+   background-color: rgb(71, 70, 70);
+    display: flex;
+    margin: auto;
+    max-width: 960px;
+    min-height: 380px;
+    gap: 10px;
+} 
+
+#contenedor-CasosBusqueda > section {
+    padding: 10px;
+}
+
+
+/* Contenedor Casos de Éxito */
+.casosExito {
+    background-color:rgb(253, 245, 233);
+    border-radius: 10px;
+    max-width: 960px;
+    min-height: 380px;
+    margin-bottom: 10px;
+}
+
+ .casosExito .avatar {
+    background-color: gray;
+    border-radius: 150px;
+    text-align: center;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.casosExito .nombreExito {
+    background-color: gray;
+    border-radius: 10px;
+    margin: auto;
+    max-width: 250px;
+    min-height: 50px;
+    margin-bottom: 20px;
+}
+
+.casosExito .nombreExito p {
+    color: black;
+    text-align: center;
+    
+}
+
+.casosExito .descripcion {
+    background-color: gray;
+    border-radius: 10px;
+    margin: auto;
+    width: 480px;
+    height: 280px;
+
+   
+}
+
+
+.casosExito h1 {
+    text-align: center;
+}
+
+.casosExito .descripcion, h2 {
+    padding: 10px;
+}
+.casosExito .descripcion, p{
+    color: white;
+    padding: 10px;
+}
+
+ .casosExito li {
+    margin-bottom: 10px;
+    
+} 
+
+
+
+/* Contenedor Formulario */
+.formBusqueda {
+    background-color:rgb(253, 245, 233);
+    border-radius: 10px;
+    width: 480px;
+    height: 580px;
+   
+}
+
+.formBusqueda h1 {
+    text-align: center;
+}
+
+/* FORMULARIO BÚSQUEDA */
+.formBusqueda label {
+    font-weight: bold;
+    display: block;
+    margin: 1rem 0;
+    
+  }
+
+.formBusqueda input {
+    background: gray;
+    border-radius: 10px;
+    border: none;
+    
+    margin: 0 auto;
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    color: white;
+    
+  }
+
+
+  .formBusqueda input::placeholder {
+      color: darkgray;
+  }
+
+  .formBusqueda button {
+    background: gray;
+    font-weight: bold;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 1rem 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:3rem;
+    display: block;
+  }
+
+
+/******************* Seccion 3 *****************/
+#contenedor-FuncionApp {
+    background-color: rgb(166, 163, 163);
+    margin: auto;
+    max-width: 960px;
+}
+
+.comoFunciona {
+    background-color:rgb(97, 112, 97);
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+   
+}
+
+ .comoFunciona h1 {
+    text-align: center;
+}
+   
+
+
+ .comoFunciona ul{
+    display: flex; 
+    gap: 10px;
+} 
+
+.pasos {
+    background-color:green;
+    padding: 20px;
+    display: flex;
+    border-radius: 10px;
+}
+
+.pasos p{
+    color: white;
+    margin-left: .5rem;
+}
+
+ .quienDirigida {
+    background-color:rgb(250, 253, 250);
+    border-radius: 10px;
+    margin:  auto;
+    padding: 10px;
+    width: 940px;
+    height: 450px;
+    margin-bottom: 10px;
+   
+  
+} 
+
+.quienDirigida ul {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+
+.quienDirigida h1 {
+    text-align: center;
+}
+
+.quienDirigida li {
+    background-color: cadetblue;
+    width: 380px;
+    height: 370px;
+    
+    border-radius: 10px;
+
+}
+
+.quienDirigida .videoInicio {
+    width: 680px;
+}
+
+.descripcion p {
+    padding: 20px;
+}
+
+.quienDirigida .divisoria {
+    height: 1px;
+    background-color: rgb(95, 94, 92);
+}
+
+
+
+/******************* Seccion 4 *****************/
+#contenedor-ContactarMapa {
+    background-color:rgb(179, 226, 179);
+    display: flex;
+    margin: auto;
+    max-width: 960px;
+    min-height: 480px;
+    gap: 10px;
+}
+
+
+.contactar {
+    background-color:rgb(122, 124, 122);
+    border-radius: 10px;
+    width: 480px;
+    height: 480px;
+    padding: 10px;
+}
+
+
+.contactar h1 {
+    text-align: center;
+}
+
+/* formulario */
+/* FORMULARIO Contacto */
+.formContactar label {
+    font-weight: bold;
+    display: block;
+    margin: 1rem 0;
+    
+  }
+
+.formContactar input {
+    background: rgb(231, 227, 227);
+    border-radius: 10px;
+    border: none;
+    
+    margin: 0 auto;
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    color: white;
+    
+  }
+
+
+  .formContactar input::placeholder {
+      color: darkgray;
+  }
+
+  .formContactar textarea{
+    background-color: rgb(231, 227, 227);
+    display: inline-block;
+    border-radius: 10px;
+    border: none;
+    margin: 0 auto;
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    color: white;
+      
+}
+  .formContactar button {
+    background: rgb(231, 227, 227);
+    font-weight: bold;
+    color:gray;
+    border-radius: 10px;
+    border: none;
+    padding: 1rem 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:3rem;
+    display: block;
+  }
+
+  
+  /* Mapa  */
+.mapa {
+    background-color:rgb(37, 59, 37);
+    border-radius: 10px;
+    width: 480px;
+    height: 480px;
+    padding: 10px;
+}
+
+.mapa h1 {
+    text-align: center;
+}
+
+
+/* .App {
   text-align: center;
 }
 
@@ -30,4 +542,4 @@
 
 #UserProfile {
   color: #282c34;
-}
+} */

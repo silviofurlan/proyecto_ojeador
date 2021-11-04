@@ -43,6 +43,8 @@ function App() {
           </ul>
 
           <div>
+
+
             {token ? (
               <p>
                 Estás logueado <button onClick={() => logout()}>Log out</button>
@@ -59,6 +61,7 @@ function App() {
             )}
           </div>
         </nav>
+        
         <Switch>
           <Route path='/buscar'>
             <Search />

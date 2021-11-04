@@ -1,0 +1,139 @@
+
+
+header.principal {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    z-index: 10000; 
+    width: 100%;
+}
+
+
+header.principal .wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header.principal ul.social {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: .5rem 0;
+}
+
+
+header.principal ul.social li {
+    margin-left: 1rem;
+}
+
+header.principal ul.social a {
+    transition: color .3s ease;
+    color: blanchedalmond;
+}
+
+header.principal a {
+    color: white;
+    text-decoration: none;
+}
+
+header.principal h1 {
+    font-size: 3rem;
+   
+}
+
+header.principal nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header.principal nav ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header.principal nav ul li {
+    font-size: 1.25rem;
+    margin-left: 0.5rem;
+    border-left: 1px solid white;
+    padding-left: 0.5rem;
+  
+}
+
+header.principal nav ul a {
+    transition: color .3s ease;
+}
+
+header.principal nav ul li:first-child {
+    border-left: none;
+}
+
+/* Li Buscar */
+/* header.principal nav ul li: {
+    border-left: none;
+} */
+
+header.principal li a:hover {
+    color: rgb(109, 238, 109);
+    animation-delay: 0s;
+    text-decoration: none;
+}
+
+
+
+header.principal h1 .logo {
+   
+   align-items: baseline;
+   
+}
+header.principal .logo {
+    font-size: 3rem;
+    color:rgb(109, 238, 109);
+    display: inline-block;
+   
+}
+
+header.principal h1 a:hover {
+    color:wheat;
+    animation-delay: 0s;
+    text-decoration: none;
+}
+
+header.principal .logo {
+    animation-delay: 0s;
+    text-decoration: none;
+    transition: color .3s ease;
+    animation: fadeEnter .10s ease both 0.25s;
+}
+/*##############Animación #################*/
+
+@keyframes fadeEnter {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
+
+@media screen and (min-width: 600px) and (max-width: 960px) and (orientacion: portrait) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    body {
+        padding-top: 160px;
+    }
+    nav ul li:nth-child(3){
+    order: -1;
+    }
+   
+
+} 
+
