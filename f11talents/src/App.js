@@ -28,6 +28,7 @@ function App() {
         <div className="divLogo">
                 <h1><a class="logo" href="/">f11-Talents</a>
                 </h1>
+                
             </div>
           <nav>
             <ul className='social'>
