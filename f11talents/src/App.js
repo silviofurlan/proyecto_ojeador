@@ -25,13 +25,20 @@ function App() {
       <header className='principal'>
         <div className='wrapper'>
 
+        <ul className="social">
+                <li><a href="#"><span class="icon icon-instagram"></span></a></li>
+                <li><a href="#"><span class="icon icon-facebook"></span></a></li>
+                <li><a href="#"><span class="icon icon-twitter"></span></a></li>
+                <li><a href="#"><span class="icon icon-youtube"></span></a></li>
+            </ul>
+
         <div className="divLogo">
                 <h1><a class="logo" href="/">f11-Talents</a>
                 </h1>
-                
             </div>
+          
           <nav>
-            <ul className='social'>
+            <ul className='navigation-list'>
               <li>
                 <Link to='/'>Inicio</Link>
               </li>
@@ -67,8 +74,11 @@ function App() {
               )}
             </div>
           </nav>
+          </div>
+      </header>
 
-          <Switch>
+      <div className="Switch">
+      <Switch>
             <Route path='/buscar'>
               <Search />
             </Route>
@@ -89,15 +99,16 @@ function App() {
               <AboutUs />
             </Route>
             <Route path='/contact'>
-              <ContactUs />
+            <ContactUs />
             </Route>
             <Route path='/'>
               <Home />
             </Route>
           </Switch>
-        </div>
-      </header>
+          </div>
     </Router>
+   
+         
   );
 }
 
