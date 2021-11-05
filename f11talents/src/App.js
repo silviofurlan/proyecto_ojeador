@@ -24,10 +24,15 @@ function App() {
     <Router>
       <header className='principal'>
         <div className='wrapper'>
+
+        <div className="divLogo">
+                <h1><a class="logo" href="/">f11-Talents</a>
+                </h1>
+            </div>
           <nav>
             <ul className='social'>
               <li>
-                <Link to='/'>Início</Link>
+                <Link to='/'>Inicio</Link>
               </li>
               <li>
                 <Link to='/buscar'>Búsqueda</Link>
