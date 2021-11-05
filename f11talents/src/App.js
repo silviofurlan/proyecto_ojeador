@@ -22,74 +22,75 @@ function App() {
   const { token, user, logout } = useContext(AuthTokenContext);
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to='/'>Início</Link>
-            </li>
-            <li>
-              <Link to='/buscar'>Búsqueda</Link>
-            </li>
-            <li>
-              <Link to='/micuenta'>Mi Cuenta</Link>
-            </li>
-            <li>
-              <Link to='/about'>Sobre esta página</Link>
-            </li>
-            <li>
-              <Link to='/contact'>Contacto</Link>
-            </li>
-          </ul>
+      <header className='principal'>
+        <div className='wrapper'>
+          <nav>
+            <ul className='social'>
+              <li>
+                <Link to='/'>Início</Link>
+              </li>
+              <li>
+                <Link to='/buscar'>Búsqueda</Link>
+              </li>
+              <li>
+                <Link to='/micuenta'>Mi Cuenta</Link>
+              </li>
+              <li>
+                <Link to='/about'>Sobre esta página</Link>
+              </li>
+              <li>
+                <Link to='/contact'>Contacto</Link>
+              </li>
+            </ul>
 
-          <div>
+            <div>
+              {token ? (
+                <p>
+                  Estás logueado{' '}
+                  <button onClick={() => logout()}>Log out</button>
+                </p>
+              ) : (
+                <ul>
+                  <li>
+                    <Link to='/login'>Login</Link>
+                  </li>
+                  <li>
+                    <Link to='/register'>Registro</Link>
+                  </li>
+                </ul>
+              )}
+            </div>
+          </nav>
 
-
-            {token ? (
-              <p>
-                Estás logueado <button onClick={() => logout()}>Log out</button>
-              </p>
-            ) : (
-              <ul>
-                <li>
-                  <Link to='/login'>Login</Link>
-                </li>
-                <li>
-                  <Link to='/register'>Registro</Link>
-                </li>
-              </ul>
-            )}
-          </div>
-        </nav>
-        
-        <Switch>
-          <Route path='/buscar'>
-            <Search />
-          </Route>
-          <Route path='/micuenta'>
-            <MyAccount />
-            <MyProfiles />
-          </Route>
-          <Route path='/profile'>
-            <PlayerProfilePage id={30} />
-          </Route>
-          <Route path='/register'>
-            <Register />
-          </Route>
-          <Route path='/login'>
-            <Login />
-          </Route>
-          <Route path='/about'>
-            <AboutUs />
-          </Route>
-          <Route path='/contact'>
-            <ContactUs />
-          </Route>
-          <Route path='/'>
-            <Home />
-          </Route>
-        </Switch>
-      </div>
+          <Switch>
+            <Route path='/buscar'>
+              <Search />
+            </Route>
+            <Route path='/micuenta'>
+              <MyAccount />
+              <MyProfiles />
+            </Route>
+            <Route path='/profile'>
+              <PlayerProfilePage id={30} />
+            </Route>
+            <Route path='/register'>
+              <Register />
+            </Route>
+            <Route path='/login'>
+              <Login />
+            </Route>
+            <Route path='/about'>
+              <AboutUs />
+            </Route>
+            <Route path='/contact'>
+              <ContactUs />
+            </Route>
+            <Route path='/'>
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </header>
     </Router>
   );
 }
