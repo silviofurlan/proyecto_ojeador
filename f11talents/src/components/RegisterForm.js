@@ -53,7 +53,7 @@ export const RegisterForm = (props) => {
         >
           {' '}
           <option value='' disabled>
-            Selecciona un usuario
+            Tipo de cuenta
           </option>
           <option value='family'>Familia</option>
           <option value='scout'>Ojeador</option>
