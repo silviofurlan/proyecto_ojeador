@@ -34,50 +34,50 @@ export const RegisterForm = (props) => {
   }
 
   return (
-    <>
-      <h2>Registro</h2>
-      <form onSubmit={onSubmit}>
-        <label htmlFor='name'>Nombre</label>
-        <input
-          type='text'
-          name='nombre'
-          id='nombre'
-          value={user_name}
-          onChange={(e) => setUserName(e.target.value)}
-        />
-        <label htmlFor='name'>Tipo de Cuenta</label>
-        <select
-          id='role'
-          value={user_role}
-          onChange={(e) => setUserRole(e.target.value)}
-        >
-          {' '}
-          <option value='' disabled>
-            Tipo de cuenta
-          </option>
-          <option value='family'>Familia</option>
-          <option value='scout'>Ojeador</option>
-        </select>
-        <label htmlFor='email'>email</label>
-        <input
-          type='text'
-          name='email'
-          id='email'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label htmlFor='password'>password</label>
-        <input
-          type='password'
-          name='password'
-          id='password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type='submit'>Enviar</button>
-        <br />
-        <br />
-      </form>
-    </>
+    <section id='contenedor-Registro'>
+      <section className='formRegistro'>
+        <h2>Registro</h2>
+        <form onSubmit={onSubmit}>
+          <label htmlFor='name'>Nombre</label>
+          <input
+            type='text'
+            name='nombre'
+            id='nombre'
+            value={user_name}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+          <label for='name'>Tipo de Cuenta</label>
+          <select
+            id='role'
+            value={user_role}
+            onChange={(e) => setUserRole(e.target.value)}
+          >
+            {' '}
+            <option value='' disabled></option>
+            <option value='family'>Familia</option>
+            <option value='scout'>Ojeador</option>
+          </select>
+          {/*################################################### */}
+
+          <label htmlFor='email'>Email</label>
+          <input
+            type='text'
+            name='email'
+            id='email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label htmlFor='password'>Password</label>
+          <input
+            type='password'
+            name='password'
+            id='password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type='submit'>Registrar</button>
+        </form>
+      </section>
+    </section>
   );
 };
