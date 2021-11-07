@@ -1,4 +1,4 @@
-import {RegisterForm} from "./RegisterForm";
+import { RegisterForm } from './RegisterForm';
 
 export default function Register() {
     return (
@@ -9,4 +9,3 @@ export default function Register() {
         </section>
     );
 }
-
