@@ -19,24 +19,42 @@ import MyProfiles from './components/UserProfiles';
 import PlayerProfilePage from './components/pages/PlayerProfilePage';
 
 function App() {
-  const { token, user, logout } = useContext(AuthTokenContext);
+  const { token, logout } = useContext(AuthTokenContext);
   return (
     <Router>
       <header className='principal'>
         <div className='wrapper'>
+          <ul className='social'>
+            <li>
+              <a href='/'>
+                <span className='icon icon-instagram'></span>
+              </a>
+            </li>
+            <li>
+              <a href='/'>
+                <span className='icon icon-facebook'></span>
+              </a>
+            </li>
+            <li>
+              <a href='/'>
+                <span className='icon icon-twitter'></span>
+              </a>
+            </li>
+            <li>
+              <a href='/'>
+                <span className='icon icon-youtube'></span>
+              </a>
+            </li>
+          </ul>
 
-        <ul className="social">
-                <li><a href="#"><span class="icon icon-instagram"></span></a></li>
-                <li><a href="#"><span class="icon icon-facebook"></span></a></li>
-                <li><a href="#"><span class="icon icon-twitter"></span></a></li>
-                <li><a href="#"><span class="icon icon-youtube"></span></a></li>
-            </ul>
+          <div className='divLogo'>
+            <h1>
+              <a className='logo' href='/'>
+                f11-Talents
+              </a>
+            </h1>
+          </div>
 
-        <div className="divLogo">
-                <h1><a class="logo" href="/">f11-Talents</a>
-                </h1>
-            </div>
-          
           <nav>
             <ul className='navigation-list'>
               <li>
@@ -74,96 +92,115 @@ function App() {
               )}
             </div>
           </nav>
-          </div>
+        </div>
       </header>
-                
-       
-      <div className="Switch">
-      <Switch>
-            <Route path='/buscar'>
-              <Search />
-            </Route>
-            <Route path='/micuenta'>
-              <MyAccount />
-              <MyProfiles />
-            </Route>
-            <Route path='/profile'>
-              <PlayerProfilePage id={30} />
-            </Route>
-            <Route path='/register'>
-              <Register />
-            </Route>
-            <Route path='/login'>
-              <Login />
-            </Route>
-            <Route path='/about'>
-              <AboutUs />
-            </Route>
-            <Route path='/contact'>
+
+      <div className='Switch'>
+        <Switch>
+          <Route path='/buscar'>
+            <Search />
+          </Route>
+          <Route path='/micuenta'>
+            <MyAccount />
+            <MyProfiles />
+          </Route>
+          <Route path='/profile'>
+            <PlayerProfilePage id={30} />
+          </Route>
+          <Route path='/register'>
+            <Register />
+          </Route>
+          <Route path='/login'>
+            <Login />
+          </Route>
+          <Route path='/about'>
+            <AboutUs />
+          </Route>
+          <Route path='/contact'>
             <ContactUs />
-            </Route>
-            <Route path='/'>
-              <Home />
-            </Route>
-          </Switch>
-          </div>
-          
-            <footer className="contenedor-Footer">
-              <section className="wrapper">
+          </Route>
+          <Route path='/'>
+            <Home />
+          </Route>
+        </Switch>
+      </div>
 
-              <article className="navFooter">
-                <h2>f11-Talents</h2>
-                <ul>
-                    <li><a href="/">Registrar</a></li>
-                    <li><a href="/">Buscar</a></li>
-                    <li><a href="/">Nosotros</a></li>
-                    <li><a href="/">Contactar</a></li>
-                    <li><a href="/">Mi Cuenta</a></li>
-                </ul>
-              </article>
+      <footer className='contenedor-Footer'>
+        <section className='wrapper'>
+          <article className='navFooter'>
+            <h2>f11-Talents</h2>
+            <ul>
+              <li>
+                <a href='/'>Registrar</a>
+              </li>
+              <li>
+                <a href='/'>Buscar</a>
+              </li>
+              <li>
+                <a href='/'>Nosotros</a>
+              </li>
+              <li>
+                <a href='/'>Contactar</a>
+              </li>
+              <li>
+                <a href='/'>Mi Cuenta</a>
+              </li>
+            </ul>
+          </article>
 
-              <article className="contactos">
-                <h2>Contacto</h2>
-                <ul>
-                    <p>+ 34&nbsp; 618 95 47 47</p>
-                    <p>info@f11-talents.es</p>
+          <article className='contactos'>
+            <h2>Contacto</h2>
+            <ul>
+              <p>+ 34&nbsp; 618 95 47 47</p>
+              <p>info@f11-talents.es</p>
+            </ul>
+          </article>
 
-                </ul>
-            </article>
+          <article className='navLegal'>
+            <h2>Legal</h2>
+            <ul>
+              <li>
+                <a href='/'>Aviso Legal</a>
+              </li>
+              <li>
+                <a href='/'>Política de cookies</a>
+              </li>
+              <li>
+                <a href='/'>Política de Privacidad</a>
+              </li>
+            </ul>
+          </article>
 
-            <article className="navLegal">
-                <h2>Legal</h2>
-                <ul>
-                    <li><a href="">Aviso Legal</a></li>
-                    <li><a href="">Política de cookies</a></li>
-                    <li><a href="">Política de Privacidad</a></li>
-                </ul>
-            </article>
+          <article className='siguenos'>
+            <h2>¡Síguenos!</h2>
+            <section className='iconosSiguenos'>
+              <a href='/'>
+                <span className='icon icon-instagram'></span>
+              </a>
+              <a href='/'>
+                <span className='icon icon-facebook'></span>
+              </a>
+              <a href='/'>
+                <span className='icon icon-twitter'></span>
+              </a>
+              <a href='/'>
+                <span className='icon icon-youtube'></span>
+              </a>
+            </section>
+          </article>
+        </section>
 
-            <article className="siguenos">
-                <h2>¡Síguenos!</h2>
-                <section class="iconosSiguenos">
-                    <a href="#"><span class="icon icon-instagram"></span></a>
-                    <a href="#"><span class="icon icon-facebook"></span></a>
-                    <a href="#"><span class="icon icon-twitter"></span></a>
-                    <a href="#"><span class="icon icon-youtube"></span></a>
-                </section>
-            </article>
+        <div className='divisoria'></div>
 
-              </section>
-
-              <div className="divisoria"></div>
-
-              <div className="pieNota">
-              <p>Desarrollo: Alumnos Hack a Boss | Copyright &copy; 2021 <span className='logo'>F11-Talents</span> .
-                      Todos los derechos reservados. </p>
-              </div>
-            </footer> 
+        <div className='pieNota'>
+          <p>
+            Desarrollo: Alumnos Hack a Boss | Copyright &copy; 2021{' '}
+            <span className='logo'>F11-Talents</span> . Todos los derechos
+            reservados.{' '}
+          </p>
+        </div>
+      </footer>
     </Router>
-
-
-   
-         
   );
 }
 

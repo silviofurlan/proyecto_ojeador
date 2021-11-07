@@ -1,12 +1,10 @@
-import {RegisterForm} from "./RegisterForm";
+import { RegisterForm } from './RegisterForm';
 
 export default function Register() {
-    return (
-        <section id="contenedor-Registro">
-
-         <section class="formRegistro"></section>
-            <RegisterForm/>
-        </section>
-    );
+  return (
+    <section id='contenedor-Registro'>
+      <section className='formRegistro'></section>
+      <RegisterForm />
+    </section>
+  );
 }
-
