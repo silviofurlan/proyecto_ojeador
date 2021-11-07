@@ -4,7 +4,7 @@ export default function Register() {
     return (
         <section id="contenedor-Registro">
 
-         <section class="formRegistro"></section>
+         <section className="formRegistro"></section>
             <RegisterForm/>
         </section>
     );
