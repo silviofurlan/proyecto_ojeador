@@ -9,6 +9,5 @@ export default function Home() {
     <Register />
     <SearchCase />
     </div>
-
   );
 }
