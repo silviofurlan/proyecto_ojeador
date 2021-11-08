@@ -65,7 +65,7 @@ export const post = async ({
   } catch (msg) {
     onCommunicationError(msg);
     // fallo de comunicación, informar al usuario?
-    console.error('Errorísimo!!!!', msg);
+    console.error('Fallo de comunicación', msg);
   }
 };
 

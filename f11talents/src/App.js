@@ -2,9 +2,6 @@ import './App.css';
 import React from 'react';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-// import { get } from './api/api';
-
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './components/pages/Home';
 import Search from './components/pages/Search';
@@ -14,7 +11,7 @@ import AboutUs from './components/pages/AboutUs';
 import ContactUs from './components/pages/ContactUs';
 import MyAccount from './components/pages/MyAccount';
 import { useContext } from 'react/cjs/react.development';
-import { AuthTokenContext } from '.';
+import { AuthTokenContext } from './index';
 import MyProfiles from './components/UserProfiles';
 import PlayerProfilePage from './components/pages/PlayerProfilePage';
 

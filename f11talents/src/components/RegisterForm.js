@@ -1,83 +1,76 @@
-import React, { useState } from 'react';
-import { Redirect } from 'react-router';
-import { post } from '../api/api';
-import { useLocalStorage } from '../hooks/useLocalStorage';
+import React from 'react';
+import validate from './validateFormInfo';
+import useRegisterForm from '../hooks/useRegisterForm';
 
-export const RegisterForm = (props) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [user_name, setUserName] = useState('');
-  const [user_role, setUserRole] = useState('');
-  const [token, setToken] = useLocalStorage('', 'accessToken');
+export const RegisterForm = ({ submitForm }) => {
+  const { handleChange, values, handleSubmit, errors } = useRegisterForm(
+    submitForm,
+    validate
+  );
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const body = {
-      email: email,
-      password: password,
-      name: user_name,
-      role: user_role,
-    };
-    const handleServerResponse = (body) => {
-      console.log(body);
-      setToken(body.token);
-    };
-    post({
-      url: 'http://localhost:4000/register',
-      body,
-      callback: handleServerResponse,
-    });
-  };
-
-  if (token) {
-    return <Redirect to='/profiles' />;
-  }
+  // if (token) {
+  //   return <Redirect to='/profiles' />;
+  // }
 
   return (
-    <section id='contenedor-Registro'>
-      <section className='formRegistro'>
-        <h2>Registro</h2>
-        <form onSubmit={onSubmit}>
-          <label htmlFor='name'>Nombre</label>
+    <div className='form-content-right'>
+      <form onSubmit={handleSubmit} className='form' noValidate>
+        <h2>Registrate Gratis</h2>
+        <div className='form-inputs'>
+          <label htmlFor='username' className='form-label'>
+            Nombre
+          </label>
           <input
+            className='form-input'
             type='text'
-            name='nombre'
-            id='nombre'
-            value={user_name}
-            onChange={(e) => setUserName(e.target.value)}
+            name='username'
+            id='username'
+            value={values.username}
+            onChange={handleChange}
           />
-          <label for='name'>Tipo de Cuenta</label>
+          {errors.username && <p>{errors.username}</p>}
+
+          <label htmlFor='role'>Tipo de Cuenta</label>
           <select
+            className='form-input'
+            name='role'
             id='role'
-            value={user_role}
-            onChange={(e) => setUserRole(e.target.value)}
+            value={values.role}
+            onChange={handleChange}
           >
             {' '}
-            <option value='' disabled></option>
+            <option value='' disabled>
+              Selecciona un tipo de cuenta
+            </option>
             <option value='family'>Familia</option>
             <option value='scout'>Ojeador</option>
           </select>
-          {/*################################################### */}
+          {errors.role && <p>{errors.role}</p>}
 
-          <label htmlFor='email'>Email</label>
+          <label htmlFor='email'>email</label>
           <input
+            className='form-input'
             type='text'
             name='email'
             id='email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={values.email}
+            onChange={handleChange}
           />
-          <label htmlFor='password'>Password</label>
+          {errors.email && <p>{errors.email}</p>}
+
+          <label htmlFor='password'>password</label>
           <input
+            className='form-input'
             type='password'
             name='password'
             id='password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={values.password}
+            onChange={handleChange}
           />
-          <button type='submit'>Registrar</button>
-        </form>
-      </section>
-    </section>
+          {errors.password && <p>{errors.password}</p>}
+        </div>
+        <button type='submit'>Enviar</button>
+      </form>
+    </div>
   );
 };
