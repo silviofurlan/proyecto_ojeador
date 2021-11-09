@@ -202,21 +202,20 @@ main > section {
   border-radius: 2px;
   background: linear-gradient(
     90deg,
-    rgb(39, 176, 255) 0%,
-    rgb(0, 232, 236) 100%
+    rgb(133, 196, 144) 0%,
+    rgb(59, 163, 33) 100%
   );
   outline: none;
   border: none;
   color: #fff;
   font-size: 1rem;
 }
-
 .form-input-btn:hover {
   cursor: pointer;
   background: linear-gradient(
     90deg,
-    rgb(39, 143, 255) 0%,
-    rgb(12, 99, 250) 100%
+    rgb(59, 163, 33) 100%,
+    rgb(22, 104, 2) 100%
   );
   transition: all 0.4s ease-out;
 }

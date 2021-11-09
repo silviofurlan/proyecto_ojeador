@@ -35,8 +35,12 @@ export const post = async ({
   body,
   callback,
   token = '',
-  onError = () => {},
-  onCommunicationError = () => {},
+  onError = (e) => {
+    console.error(e);
+  },
+  onCommunicationError = (e) => {
+    console.error(e);
+  },
 }) => {
   try {
     const response = await fetch(url, {
@@ -48,13 +52,12 @@ export const post = async ({
       body: JSON.stringify(body),
     });
 
+    const json = await response.json();
     if (response.ok) {
-      const body = await response.json();
-
-      callback(body);
+      callback(json);
       // respuesta correcta, hacer algo con body
     } else {
-      onError(response);
+      onError(json);
       console.log(
         'Codigo de estado no esperado',
         response.status,

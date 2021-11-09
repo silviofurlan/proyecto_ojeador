@@ -29,7 +29,7 @@ export const useGetMyProfiles = (token) => {
   return [myProfiles, errorMessage];
 };
 
-export default function MyProfiles() {
+export default function UserProfiles() {
   const { token } = useContext(AuthTokenContext);
   const [myProfiles] = useGetMyProfiles(token);
   return (
