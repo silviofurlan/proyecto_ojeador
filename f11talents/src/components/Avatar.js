@@ -3,15 +3,22 @@ const Avatar = (props) => {
 
   if (!avatar)
     return (
-      <div id='Avatar'>
-        <img src={`http://localhost:4000/fotos/placeholder.png`} alt='Avatar' />
+      <div className='avatarPerfil'>
+        <img
+          src={`http://localhost:4000/fotos/placeholder.png`}
+          alt='Avatar'
+          className='avatar'
+        />
       </div>
     );
   return (
-    <div id='Avatar'>
-      <img src={`http://localhost:4000/fotos/${avatar}`} alt='Avatar' />
+    <div className='avatarPerfil'>
+      <img
+        src={`http://localhost:4000/fotos/${avatar}`}
+        alt='Avatar'
+        className='avatar'
+      />
     </div>
   );
 };
 export default Avatar;
-

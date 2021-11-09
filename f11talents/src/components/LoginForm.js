@@ -44,7 +44,7 @@ export const LoginForm = (props) => {
   return (
     <>
       <h2>Login</h2>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className='form'>
         <label htmlFor='email'>email</label>
         <input
           type='text'

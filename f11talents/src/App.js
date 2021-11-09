@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Home from './components/pages/Home';
-import Search from './components/pages/Search';
+import SearchPage from './components/pages/SearchPage';
 import Register from './components/pages/Register';
 import Login from './components/pages/Login';
 import AboutUs from './components/pages/AboutUs';
@@ -61,13 +61,13 @@ function App() {
                 <Link to='/buscar'>Búsqueda</Link>
               </li>
               <li>
-                <Link to='/micuenta'>Mi Cuenta</Link>
-              </li>
-              <li>
                 <Link to='/about'>Sobre esta página</Link>
               </li>
               <li>
                 <Link to='/contact'>Contacto</Link>
+              </li>
+              <li>
+                <Link to='/micuenta'>Mi Cuenta</Link>
               </li>
             </ul>
 
@@ -95,14 +95,13 @@ function App() {
       <div className='Switch'>
         <Switch>
           <Route path='/buscar'>
-            <Search />
+            <SearchPage />
           </Route>
           <Route path='/micuenta'>
             <MyAccount />
-            <MyProfiles />
           </Route>
           <Route path='/profile'>
-            <PlayerProfilePage id={30} />
+            <PlayerProfilePage />
           </Route>
           <Route path='/register'>
             <Register />

@@ -2,8 +2,8 @@ import { Redirect } from 'react-router';
 import { useContext } from 'react/cjs/react.development';
 import { AuthTokenContext } from '../../index';
 import { useUserAccount } from '../../hooks/useUserAccount';
-
-import { UserProfile } from '../UserInfo';
+import UserProfiles from '../UserProfiles';
+import { UserInfo } from '../UserInfo';
 
 export default function MyAccount() {
   const { token } = useContext(AuthTokenContext);
@@ -14,7 +14,8 @@ export default function MyAccount() {
       <div className='App'>
         <header className='App-header'>
           <div className='main'>
-            <UserProfile resume={userAccount} />
+            <UserInfo resume={userAccount} />
+            <UserProfiles />
           </div>
         </header>
       </div>

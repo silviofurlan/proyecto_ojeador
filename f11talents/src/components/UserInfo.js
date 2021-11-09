@@ -1,11 +1,11 @@
 import React from 'react';
 import { UserAccountData } from './UserAccountData';
 
-export const UserProfile = ({ resume }) => {
+export const UserInfo = ({ resume }) => {
   const { name, email } = resume;
 
   return (
-    <div id='UserProfile'>
+    <div id='UserInfo'>
       <UserAccountData name={name} email={email} />
     </div>
   );
