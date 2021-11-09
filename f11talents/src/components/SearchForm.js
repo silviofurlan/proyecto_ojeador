@@ -56,9 +56,8 @@ export const SearchForm = () => {
         </select>
 
         {/* ##################################*/}
-        <input type='text' id='age'>
-          Edad
-        </input>
+        <label htmlFor='category'>Edad</label>
+        <input type='text' id='age' />
 
         <label htmlFor='player_skill'>Skill</label>
         <select
