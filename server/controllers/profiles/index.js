@@ -10,6 +10,7 @@ const getProfile = require('./getProfiles');
 const listProfiles = require('./listProfiles');
 const newProfile = require('./newProfile');
 const sendContract = require('./sendContract');
+const searchProfiles = require('./searchProfiles');
 
 module.exports = {
   newProfile,
@@ -24,4 +25,5 @@ module.exports = {
   editProfile,
   deleteVideos,
   sendContract,
+  searchProfiles,
 };

@@ -1,24 +1,27 @@
 import { useEffect, useState } from 'react';
 import { fetchData } from '../api/api';
 
-export const useSearchProfiles = () => {
-  const [results, setResults] = useState([]);
+export const useGetMyProfiles = (token) => {
+  const [myProfiles, setUserAccount] = useState([]);
   const [errorMessage, setErrorMessage] = useState();
 
   useEffect(() => {
     const getData = async () => {
       try {
         const data = await fetchData({
-          url: `http://localhost:4000/search`,
+          url: `http://localhost:4000/users/${window.localStorage.getItem(
+            'userId'
+          )}/profiles`,
+          token,
         });
 
-        setResults(data.results);
+        setUserAccount(data.userProfiles);
         setErrorMessage();
       } catch (error) {
         setErrorMessage(error.message);
       }
     };
     getData();
-  }, []);
-  return [results, errorMessage];
+  }, [token]);
+  return [myProfiles, errorMessage];
 };

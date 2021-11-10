@@ -33,6 +33,7 @@ const {
   editProfile,
   deleteVideos,
   sendContract,
+  searchProfiles,
 } = require('./controllers/profiles');
 
 //CONTROLADORES DE USUARIOS
@@ -69,6 +70,9 @@ app.post('/new-profile', authUser, canAddProfile, newProfile);
 
 //Lista los perfiles
 app.get('/profiles', listProfiles);
+
+//Lista los perfiles
+app.get('/search', searchProfiles);
 
 //Selecionar un perfil con su info completa
 app.get('/profiles/:idProfile', authUser, profileExists, getProfile);

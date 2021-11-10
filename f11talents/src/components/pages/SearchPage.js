@@ -1,10 +1,8 @@
 import { PlayerCard } from '../PlayerCard';
-import { useListProfiles } from '../../hooks/useListProfiles';
+import { useSearchProfiles } from '../../hooks/useSearchProfiles';
 import { SearchForm } from '../SearchForm';
 
 export default function SearchPage() {
-  const [profilesList] = useListProfiles();
-
   return (
     <div className='App'>
       <header className='App-header'>
@@ -17,15 +15,15 @@ export default function SearchPage() {
           <div>
             <SearchForm />
           </div>
-          {profilesList.length > 0
-            ? profilesList.map((profile) => (
+          {/* {results.length > 0
+            ? results.map((profile) => (
                 <PlayerCard
                   resume={profile}
                   avatar={profile.avatar}
                   key={profile.id}
                 />
               ))
-            : 'No hay datos'}
+            : 'No hay datos'} */}
         </div>
       </header>
     </div>

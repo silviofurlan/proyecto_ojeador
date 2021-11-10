@@ -28,18 +28,54 @@ const searchProfiles = async (req, res, next) => {
     // Variable donde almacenaremos los perfiles.
     let results;
 
+    // profiles.position LIKE ? AND profiles.club LIKE ? AND skills.skillName LIKE ?
+
     // Obtenemos la información del perfil.
+
+    let where = '';
+    const params = [];
+
+    if (position || club || skill || age || category) {
+      const conditions = [];
+
+      if (position) {
+        conditions.push('profiles.position LIKE ?');
+        params.push(`%${position}%`);
+      }
+
+      if (club) {
+        conditions.push('profiles.club LIKE ?');
+        params.push(`%${club}%`);
+      }
+
+      if (skill) {
+        conditions.push('skills.skillName LIKE ?');
+        params.push(`%${skill}%`);
+      }
+
+      if (age) {
+        conditions.push('profiles.birthDate = ?');
+        params.push(`${age}`);
+      }
+
+      if (category) {
+        conditions.push('profiles.category = ?');
+        params.push(`${category}`);
+      }
+
+      where = `WHERE ${conditions.join(' AND ')}`;
+    }
 
     [results] = await connection.query(
       `
                     SELECT profiles.name, profiles.id, profiles.idUser, profiles.category, profiles.club,profiles.position, profiles.birthDate, profiles.createdAt, group_concat(skills.skillName) as skills, group_concat(skills.id) as skillsID
                     FROM profiles
                     JOIN skills ON skills.idProfile = profiles.id
-                    WHERE profiles.position LIKE ? OR profiles.club LIKE ? OR skills.skillName LIKE ?
+                    ${where}
                     GROUP BY profiles.id
                     ORDER BY ${orderBy} ${orderDirection}
                 `,
-      [`%${position}%`, `%${club}%`, `%${skill}%`]
+      params
     );
 
     console.log('search', req.query);
