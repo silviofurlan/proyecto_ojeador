@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { post } from '../api/api';
 const DEFAULT_ERRORS = {
   nombre: '',
@@ -79,7 +80,8 @@ export const RegisterForm = () => {
   if (ok) return <p style={{ color: 'green' }}>{ok}</p>;
 
   return (
-    <div className='form-content-right'>
+ 
+        <div className='form-content-right'>
       <form onSubmit={handleSubmit} className='form'>
         <h1>Regístrate Gratis</h1>
         <div className='form-inputs'>
@@ -150,5 +152,6 @@ export const RegisterForm = () => {
         {errors.serverResponse && <p>{errors.serverResponse}</p>}
       </form>
     </div>
+ 
   );
 };

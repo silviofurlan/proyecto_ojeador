@@ -12,6 +12,14 @@ export default function ContactUs() {
     </div>
     </div>
 
+    <div className="datosContactar">
+        <h1>Escríbanos un email</h1>
+        <p>Cualquier duda a este correo electrónico:
+
+        <strong>info@f11-talents.es</strong>
+
+    </p>
+    </div>
 
     </div>)
 

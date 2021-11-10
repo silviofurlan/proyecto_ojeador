@@ -83,7 +83,7 @@ h2 {
 }
 
 .grid-itens {
-   background-color: rgb(87, 30, 30); 
+   /* background-color: rgb(87, 30, 30);  */
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -97,21 +97,17 @@ h2 {
 }
 
 .grid-item {
-  background-color: greenyellow;   
+  /* background-color: greenyellow;    */
   display: block;
   flex-direction: column;
   border-radius: 10px;
   margin: auto;
   padding: 5px;
   width: 100%;
-  gap: 20px;;
-  
+  gap: 20px;
   }
   
  
-
-
-
 
 .formSearch {
   background-color: #302f2f;
@@ -120,9 +116,7 @@ h2 {
  justify-content: center;
  align-items: center;
   width: 100%;
-  
   border-radius: 10px;
-
 }
 
 
@@ -134,7 +128,7 @@ h2 {
   align-items: center;
   margin: 0 autos;
   border-radius: 20px;
-  border: none;
+  
   width: 70%;
   padding: 1.5em;
   outline: none;
@@ -209,9 +203,10 @@ h2 {
   justify-content: center;
   align-items: center;
   background-color: rgb(186, 187, 186);
+  border: solid black;
   width: 100%;
   border-radius: 10px;
-  gap: 20px;
+  gap: 50px;
 }
 
 .datosPerfil p {

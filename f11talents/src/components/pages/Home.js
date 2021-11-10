@@ -1,6 +1,7 @@
 import Intro from '../Intro';
+
 import Register from './Register';
-import SearchCase from '../SearchCase';
+// import SearchCase from '../SearchCase';
 import { useContext } from 'react/cjs/react.development';
 import { AuthTokenContext } from '../..';
 export default function Home() {
@@ -9,16 +10,16 @@ export default function Home() {
     return (
       <div>
         <Intro />
+   
         <Register />
-      
-        <SearchCase />
+        {/* <SearchCase /> */}
       </div>
     );
   } else {
     return (
       <div>
         <Intro />
-        <SearchCase />
+        {/* <SearchCase /> */}
       </div>
     );
   }

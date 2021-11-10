@@ -12,7 +12,15 @@ export default function AboutUs() {
     </div>
     </div>
    
+    <div className="datosContactar">
+   
+   <p>
+   F11-Talents es una plataforma totalmente gratis que tiene como finalidad  aproximar la realización del sueño de un ser jugador(a) profesional de fútbol.
+   </p>
+
+</div>
     </div>)
 
 }
   
+
