@@ -7,7 +7,9 @@ export default function Register() {
          <div className='form-content-left-Home'>
   
           <h1>
+
             La mejor plataforma de búsqueda de talentos en el fútbol.
+
           </h1>
           <iframe src='https://www.youtube.com/embed/h_kX-39qqMA'
         frameBorder='0'

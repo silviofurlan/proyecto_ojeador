@@ -38,7 +38,7 @@ export const RegisterForm = () => {
       isValid = false;
     }
 
-    if (password.length < 10) {
+    if (password.length < 8) {
       validationResult = {
         ...validationResult,
         password: 'La contraseña es muy corta',
