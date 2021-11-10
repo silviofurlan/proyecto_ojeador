@@ -1,5 +1,8 @@
 function PlayerResume(props) {
   return (
+
+    <div className="griContenedor">
+    <div className="grid-itens">
     <div className='grid-item'>
       <ul>
         <li className='datosPerfil'>
@@ -18,6 +21,8 @@ function PlayerResume(props) {
           <p>Habilidad: {props.skill}</p>
         </li>
       </ul>
+    </div>
+    </div>
     </div>
   );
 }

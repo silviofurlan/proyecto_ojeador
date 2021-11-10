@@ -3,6 +3,7 @@ import { useSearchProfiles } from '../../hooks/useSearchProfiles';
 import { SearchForm } from '../SearchForm';
 
 export default function SearchPage() {
+
   return (
     <div className='App'>
       <header className='App-header'>
@@ -12,9 +13,15 @@ export default function SearchPage() {
               <span>Búsqueda de Talentos</span>
             </h1>
           </section>
-          <div>
+          
+
+          <div id='contenedorCartas'>
+      <div className='gridContenedor'>
+      </div>
+   
             <SearchForm />
           </div>
+
           {/* {results.length > 0
             ? results.map((profile) => (
                 <PlayerCard
@@ -29,3 +36,4 @@ export default function SearchPage() {
     </div>
   );
 }
+

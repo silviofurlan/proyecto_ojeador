@@ -1,19 +1,17 @@
-import { RegisterForm } from '../RegisterForm';
 
-export default function Register() {
-  return (
-    <>
+
+export default function VideoHome() {
+    return (
+     
       <div className='form-container'>
          <div className='form-content-left-Home'>
-  
+          <div id='VideoHome'>
           <h1>
-
             La mejor plataforma de búsqueda de talentos en el fútbol.
-
           </h1>
-          <iframe src='https://www.youtube.com/embed/h_kX-39qqMA'
+          <iframe src='https://www.youtube.com/embed/E7wJTI-1dvQ'
         frameBorder='0'
-   
+
         width='100%'
         height='250'
       
@@ -22,12 +20,9 @@ export default function Register() {
         title='video'
 />
         </div> 
-     
-        <RegisterForm />
-      </div>
-    </>
-  );
-}
-
-
+        </div> 
+        </div> 
+    );
+  }
+  
 
