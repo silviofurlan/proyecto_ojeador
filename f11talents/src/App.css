@@ -124,10 +124,11 @@ main > section {
   padding: 10px;
 }
 
-/******************* Seccion 1 *****************/
+/******************* Sesión 2 *****************/
+/*******Formulario de Registro*****/
 .form-container {
-  margin: 100px auto;
-  width: 1000px;
+  margin: auto;
+  width: 960px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   border-radius: 10px;
@@ -135,10 +136,16 @@ main > section {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+.form-content-left {
+  background-color: greenyellow;
+}
+.form-content-left h1{
+  color: black;
+}
 .form-content-right {
   border-radius: 0 10px 10px 0;
   position: relative;
-  background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
+ background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%); 
 }
 
 .form {
@@ -155,39 +162,41 @@ main > section {
 }
 
 .form h1 {
-  font-size: 1rem;
-  text-align: start;
+  text-align: center;
+  margin-bottom: 40px;
   width: 80%;
-  margin-bottom: 1rem;
-  color: #fff;
+  color:greenyellow;
 }
 
 .form-inputs {
   margin-bottom: 0.5rem;
+  gap: 20px;
   width: 80%;
 }
 
 .form-inputs p {
   font-size: 0.8rem;
   margin-top: 0.5rem;
-  color: #f00e0e;
+  color: gray;
 }
 
 .form-label {
   display: inline-block;
   font-size: 0.8rem;
-  margin-bottom: 6px;
-  color: #fff;
+  margin-bottom: 10px;
+  color: rgb(254, 254, 254);
+  font-size: large;
 }
 
 .form-input {
   display: block;
-  padding-left: 10px;
+  margin-bottom: 20px;
   outline: none;
-  border-radius: 2px;
+  border-radius: 10px;
   height: 40px;
   width: 100%;
   border: none;
+  
 }
 
 .form-input::placeholder {
@@ -199,15 +208,16 @@ main > section {
   width: 80%;
   height: 50px;
   margin-top: 10px;
-  border-radius: 2px;
-  background: linear-gradient(
+  border-radius: 10px;
+  background:chartreuse;
+  /* background: linear-gradient(
     90deg,
     rgb(133, 196, 144) 0%,
     rgb(59, 163, 33) 100%
-  );
+  ); */
   outline: none;
   border: none;
-  color: #fff;
+  color:black;
   font-size: 1rem;
 }
 .form-input-btn:hover {
@@ -233,9 +243,584 @@ main > section {
   color: #27cdff;
   font-weight: 600;
 }
-/* .form-container {
+
+/******************* Seccion 2 *****************/
+#contenedor-CasosBusqueda {
+  background-color: cadetblue;
+  margin: auto;
+  width: 960px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: 10px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+#contenedor-CasosBusqueda > div {
+  padding: 20px;
+}
+
+
+/* Contenedor Casos de Éxito */
+
+.casosExito {
+  background-color:rgb(253, 245, 233);
+  /* border-radius: 0 10px 10px 0; */
+  position: relative;
+  max-width: 960px;
+  min-height: 380px;
+
+}
+
+.casosExito .avatar {
+  background-color: gray;
+  border-radius: 150px;
+  text-align: center;
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+} 
+
+/* Grides con perfiles de jugadores */
+.avatarPerfil .avatar {
+  width: 100px;
+  height: 100px;
+  border: solid 4px  rgb(41, 124, 41);
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.casosExito .nombreExito {
+  background-color: gray;
+  border-radius: 10px;
+  margin: auto;
+  max-width: 250px;
+  min-height: 50px;
+  margin-bottom: 20px;
+}
+
+.casosExito .nombreExito, p {
+  color: black;
+  text-align: center;
+  padding: 10px;
+  
+}
+
+
+.casosExito .descripcion {
+  background-color: gray;
+  border-radius: 10px;
+  margin: auto;
+  max-width: 90%; 
+
+}
+
+
+.casosExito h1 {
+  text-align: center;
+}
+
+.casosExito .descripcion, h2 {
   padding: 10px;
 }
+
+
+
+.casosExito .descripcion, p{
+  color: white;
+  padding: 10px;
+}
+
+.casosExito li {
+  margin-bottom: 10px;
+  
+} 
+
+
+
+/* Contenedor Formulario de Búsqueda */
+.formBusqueda {
+
+  background-color:rgb(253, 245, 233);
+  border-radius: 10px;
+  width: 480px;
+  height: 580px;
+ 
+}
+
+.formBusqueda h1 {
+  text-align: center;
+}
+
+/* FORMULARIO BÚSQUEDA */
+.formBusqueda label {
+  font-weight: bold;
+  display: block;
+  margin: 1rem 0;
+  
+}
+
+.formBusqueda input {
+  background: gray;
+  border-radius: 10px;
+  border: none;
+  margin: 0 auto;
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  color: white;
+  
+}
+
+
+.formBusqueda input::placeholder {
+    color: darkgray;
+}
+
+.formBusqueda button {
+  background: gray;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 1rem 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:3rem;
+  display: block;
+}
+
+
+/******************* Seccion 3 *****************/
+#contenedor-FuncionApp {
+  background-color: rgb(166, 163, 163);
+  margin: auto;
+  max-width: 960px;
+}
+
+.comoFunciona {
+  background-color:rgb(97, 112, 97);
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+ 
+}
+
+.comoFunciona h1 {
+  text-align: center;
+}
+ 
+
+
+.comoFunciona ul{
+  display: flex; 
+  gap: 10px;
+} 
+
+.pasos {
+  background-color:green;
+  padding: 20px;
+  display: flex;
+  border-radius: 10px;
+}
+
+.pasos p{
+  color: white;
+  margin-left: .5rem;
+}
+
+.quienDirigida {
+  background-color:rgb(250, 253, 250);
+  border-radius: 10px;
+  margin:  auto;
+  padding: 10px;
+  width: 940px;
+  height: 450px;
+  margin-bottom: 10px;
+ 
+
+} 
+
+.quienDirigida ul {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
+}
+
+.quienDirigida h1 {
+  text-align: center;
+}
+
+.quienDirigida li {
+  background-color: cadetblue;
+  width: 380px;
+  height: 370px;
+  
+  border-radius: 10px;
+
+}
+
+.quienDirigida .videoInicio {
+  width: 680px;
+}
+
+.descripcion p {
+  padding: 20px;
+}
+/* 
+.quienDirigida .divisoria {
+  height: 1px;
+  background-color: rgb(95, 94, 92);
+}
+*/
+
+
+/******************* Seccion 4 *****************/
+#contenedor-ContactarMapa {
+  /* background-color:rgb(37, 59, 37); */
+  display: flex;
+  margin: auto;
+  max-width: 960px;
+  min-height: 480px;
+ 
+}
+
+
+.contactar {
+  /* background-color: cadetblue; */
+  margin: auto;
+  width: 50%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  border: solid  black;
+  height: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+.contactar h1 {
+  text-align: center;
+}
+
+/* formulario */
+/* FORMULARIO Contacto */
+.formContactar label {
+  color: lightgoldenrodyellow;
+  font-weight: bold;
+  display: block;
+  margin: 1rem 0;
+  
+  
+}
+
+.formContactar input {
+  background: rgb(231, 227, 227);
+  border-radius: 10px;
+  border: none;
+  margin: 0 auto;
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  color: white;
+  
+}
+
+
+/* .formContactar input::placeholder {
+    color: darkgray;
+} */
+
+.formContactar textarea{
+  background-color: #e7e3e3;
+  display: inline-block;
+  border-radius: 10px;
+  border: none;
+  margin: 0 auto;
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  color: white;
+}
+.formContactar button {
+  background: rgb(231, 227, 227);
+  font-weight: bold;
+  color:gray;
+  border-radius: 10px;
+  border: none;
+  padding: 1rem 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:3rem;
+  display: block;
+}
+
+
+/* Mapa  */
+.contenedorMapa {
+  /* background-color: cadetblue; */
+  margin: auto;
+  width: 50%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  height: 600px;
+  display: grid;
+  border: solid  black;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contenedorMapa h1 {
+  text-align: center;
+}
+
+.iframeMapa {
+  border-radius: 10px;
+}
+
+
+/*################ */
+/******************* Seccion Banner 2 *****************/
+/* 
+#intro-2 {
+  margin-top: 100px;
+  min-height: 20vh;
+  background-image: url('/images/header-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#intro-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.50);
+}
+
+
+/* h1 está por debajo del fondo */
+#intro-2 h1 {
+  text-transform: uppercase;
+  position: relative;
+  color: white;
+  font-size: 50px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#intro-2 h1 span{
+  animation: fadeEnter .5s ease both 0.25s;
+  display: block;
+}
+
+
+#intro-2 .logo{
+  font-size: 1em;
+}
+
+#intro-2 h1 strong {
+  display: block;
+  color: #7fc97f;
+  font-family:'Amatic SC';
+  text-align: center;
+}
+
+#intro-2 .logo{
+  animation: fadeEnter .5s ease both 0.25s;
+  display: block;
+  justify-content: center;
+
+}
+ 
+
+
+#introContenedor{
+  background-color: gray;
+  margin-top: 100px;
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#introContenedor h1 {
+  text-transform: uppercase;
+  position: relative;
+  color: white;
+  font-size: 50px;
+  font-family: 'Amatic SC', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#introContenedor h1 span{
+  animation: fadeEnter .5s ease both 0.25s;
+  display: block;
+} 
+
+
+
+
+/* Página Login */
+
+/******************* Seccion 1 *****************/
+#contenedorBanner{
+  background-color:chartreuse;
+  margin: auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  max-width: 960px;
+  min-height: 20vh;
+
+} 
+
+#contenedorBanner > section {
+  padding: 10px;
+} 
+
+.datosBanner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+
+}
+.datosBanner h1 {
+  color:black;
+  text-transform: uppercase;
+  padding: 20px;
+  font-size: 40px;
+}
+
+
+/* Formulario Login  */
+
+#datosLogin {
+  /* background-color: rgb(85, 92, 85);  */
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  max-width: 960px;
+  min-height: 480px;
+  padding: 50px;
+
+}
+
+
+.avatarPerfil .avatar {
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  border: solid 4px  gray;
+  border-radius: 150%;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+
+
+.formLogin {
+  /* background-color: rgb(110, 105, 105); */
+  display: block;
+  margin: auto;
+  width: 100%;
+  min-height: 480px;
+  padding: 30px;
+}
+
+
+.formLogin label{
+  text-align: center;
+  display: block;
+  margin: 1em 0;
+  font-size: bold;
+
+ 
+}
+.formLogin input {
+ border: solid gray;
+ display: block;
+ margin: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  width: 50%;
+  padding: 1.5em;
+  outline: none;
+
+}
+
+.formLogin button {
+  background:  #9d9d9d;
+  color: white;
+  bottom: gray;
+  display: block;
+  margin: 2rem auto; 
+  font-size: bold;
+  border-radius: 10px;
+  border: none;
+  width: 30%;
+  padding: 1em;
+  cursor: pointer;
+
+}
+
+.formLogin button {
+  font-size:16px;
+}
+
+.formLogin p {
+  color: gray;
+}
+
+.formLogin a {
+ text-decoration-line: none;
+ 
+}
+
+/*##############Animación #################*/
+
+@keyframes fadeEnter {
+  from {
+      opacity: 0;
+      transform: translateY(-100%);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+} 
+
+
+@media screen and (min-width: 600px) and (max-width: 960px) and (orientacion: portrait) {
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+  }
+  body {
+      padding-top: 160px;
+  }
+  nav ul li:nth-child(3){
+  order: -1;
+  }
+ 
+
+} 
+
+/* ##############################################COPIA*/
 
 .formRegistro h1 {
   color: white;
@@ -301,7 +886,7 @@ main > section {
   color: rgba(255, 0, 0, 0.795);
 } */
 
-/******************* Seccion 2 *****************/
+/* ****************** Seccion 2 ****************
 #contenedor-CasosBusqueda {
   background-color: rgb(71, 70, 70);
   display: flex;
@@ -315,8 +900,8 @@ main > section {
   padding: 10px;
 }
 
-/* Contenedor Casos de Éxito */
-.casosExito {
+/* /* Contenedor Casos de Éxito */
+/* .casosExito {
   background-color: rgb(253, 245, 233);
   border-radius: 10px;
   max-width: 960px;
@@ -376,7 +961,7 @@ p {
 }
 
 /* Contenedor Formulario */
-.formBusqueda {
+/* /* .formBusqueda {
   background-color: rgb(253, 245, 233);
   border-radius: 10px;
   width: 480px;
@@ -388,7 +973,7 @@ p {
 }
 
 /* FORMULARIO BÚSQUEDA */
-.formBusqueda label {
+/* .formBusqueda label {
   font-weight: bold;
   display: block;
   margin: 1rem 0;
@@ -424,7 +1009,7 @@ p {
 }
 
 /******************* Seccion 3 *****************/
-#contenedor-FuncionApp {
+/* #contenedor-FuncionApp {
   background-color: rgb(166, 163, 163);
   margin: auto;
   max-width: 960px;
@@ -499,90 +1084,9 @@ p {
 .quienDirigida .divisoria {
   height: 1px;
   background-color: rgb(95, 94, 92);
-}
+} */
 
-/******************* Seccion 4 *****************/
-#contenedor-ContactarMapa {
-  background-color: rgb(179, 226, 179);
-  display: flex;
-  margin: auto;
-  max-width: 960px;
-  min-height: 480px;
-  gap: 10px;
-}
 
-.contactar {
-  background-color: rgb(122, 124, 122);
-  border-radius: 10px;
-  width: 480px;
-  height: 480px;
-  padding: 10px;
-}
-
-.contactar h1 {
-  text-align: center;
-}
-
-/* formulario */
-/* FORMULARIO Contacto */
-.formContactar label {
-  font-weight: bold;
-  display: block;
-  margin: 1rem 0;
-}
-
-.formContactar input {
-  background: rgb(231, 227, 227);
-  border-radius: 10px;
-  border: none;
-
-  margin: 0 auto;
-  width: 100%;
-  padding: 1rem;
-  outline: none;
-  color: white;
-}
-
-.formContactar input::placeholder {
-  color: darkgray;
-}
-
-.formContactar textarea {
-  background-color: rgb(231, 227, 227);
-  display: inline-block;
-  border-radius: 10px;
-  border: none;
-  margin: 0 auto;
-  width: 100%;
-  padding: 1rem;
-  outline: none;
-  color: white;
-}
-.formContactar button {
-  background: rgb(231, 227, 227);
-  font-weight: bold;
-  color: gray;
-  border-radius: 10px;
-  border: none;
-  padding: 1rem 4rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3rem;
-  display: block;
-}
-
-/* Mapa  */
-.mapa {
-  background-color: rgb(37, 59, 37);
-  border-radius: 10px;
-  width: 480px;
-  height: 480px;
-  padding: 10px;
-}
-
-.mapa h1 {
-  text-align: center;
-}
 
 /* .App {
   text-align: center;

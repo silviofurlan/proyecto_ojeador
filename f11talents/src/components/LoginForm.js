@@ -1,3 +1,4 @@
+
 import React, { useContext, useState } from 'react';
 import { Redirect } from 'react-router';
 import { AuthTokenContext } from '..';
@@ -43,9 +44,20 @@ export const LoginForm = (props) => {
 
   return (
     <>
-      <h2>Login</h2>
-      <form onSubmit={onSubmit} className='form'>
-        <label htmlFor='email'>email</label>
+
+      <section id="datosLogin"> 
+
+     
+      <ul>
+                <li class="avatarPerfil">
+                    {/* <section style="background-image: url(https://i.pravatar.cc/150);" class="avatar">
+                    </section> */}
+
+                </li>
+                <li>
+      <form onSubmit={onSubmit} className='formLogin'>
+
+        <label htmlFor='email'>Email</label>
         <input
           type='text'
           name='email'
@@ -53,7 +65,7 @@ export const LoginForm = (props) => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <label htmlFor='password'>password</label>
+        <label htmlFor='password'>Contraseña</label>
         <input
           type='password'
           name='password'
@@ -61,9 +73,14 @@ export const LoginForm = (props) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type='submit'>Enviar</button>
+        <button type='submit'>Acceder</button>
         {error ? <p>{error}</p> : null}
+
       </form>
+      </li>
+    
+      </ul>
+      </section>
     </>
   );
 };

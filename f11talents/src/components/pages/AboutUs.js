@@ -1,3 +1,18 @@
+import Banner  from '../Banner';
+
+
 export default function AboutUs() {
-  return <h1>About us!</h1>;
+  return ( 
+     <div>
+    <Banner />
+    <div id="contenedorBanner">
+
+    <div className="datosBanner">
+        <h1>Sobre nosotros</h1>
+    </div>
+    </div>
+   
+    </div>)
+
 }
+  

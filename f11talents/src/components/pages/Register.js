@@ -6,12 +6,11 @@ export default function Register() {
       <div className='form-container'>
         <div className='form-content-left'>
           <h1>
-            {' '}
+            {/* {' '} */}
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             Repellendus, rem.
           </h1>
         </div>
-
         <RegisterForm />
       </div>
     </>

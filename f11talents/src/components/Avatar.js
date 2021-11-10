@@ -1,3 +1,4 @@
+
 const Avatar = (props) => {
   const avatar = props.avatar;
 

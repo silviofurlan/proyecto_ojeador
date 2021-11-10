@@ -81,7 +81,7 @@ export const RegisterForm = () => {
   return (
     <div className='form-content-right'>
       <form onSubmit={handleSubmit} className='form'>
-        <h1>Registrate Gratis</h1>
+        <h1>Regístrate Gratis</h1>
         <div className='form-inputs'>
           <label htmlFor='username' className='form-label'>
             Nombre

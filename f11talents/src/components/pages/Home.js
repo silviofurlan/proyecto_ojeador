@@ -10,6 +10,7 @@ export default function Home() {
       <div>
         <Intro />
         <Register />
+      
         <SearchCase />
       </div>
     );

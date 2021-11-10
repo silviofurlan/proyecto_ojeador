@@ -15,11 +15,15 @@ export const SearchForm = () => {
     e.preventDefault();
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit} className='form'>
+
+    <div className="griContenedor">
+    <div className="grid-itens">
+    <div className='grid-item'>
+  
+      <form onSubmit={handleSubmit} className='formSearch'>
         <label htmlFor='age' className='form-label'></label>
-        <label htmlFor='position'>Puesto</label>
-        <select
+        <label htmlFor='position'className='form-label'>Puesto</label>
+        <select  className='form-input'
           type='text'
           name='position'
           id='position'
@@ -38,8 +42,8 @@ export const SearchForm = () => {
 
         {/* ##################################*/}
 
-        <label htmlFor='category'>Categoria</label>
-        <select
+        <label htmlFor='category'className='form-label'>Categoria</label>
+        <select  className='form-input'
           type='text'
           name='player_category'
           id='category'
@@ -56,11 +60,12 @@ export const SearchForm = () => {
         </select>
 
         {/* ##################################*/}
-        <label htmlFor='category'>Edad</label>
+        
+        <label htmlFor='category'className='form-label'>Edad</label>
         <input type='text' id='age' />
 
-        <label htmlFor='player_skill'>Skill</label>
-        <select
+        <label htmlFor='player_skill'className='form-label'>Skill</label>
+        <select  className='form-input'
           type='text'
           name='player_skill'
           id='player_skill'
@@ -89,8 +94,8 @@ export const SearchForm = () => {
 
         {/* ##################################*/}
 
-        <label htmlFor='player_club'>Equipo Actual</label>
-        <select
+        <label htmlFor='player_club'className='form-label'>Equipo Actual</label>
+        <select  className='form-input'
           type='text'
           name='player_club'
           id='player_club'
@@ -113,6 +118,8 @@ export const SearchForm = () => {
 
         <button type='submit'>Buscar </button>
       </form>
+    </div>
+    </div>
     </div>
   );
 };

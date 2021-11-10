@@ -4,7 +4,7 @@ export default function Intro() {
       <h1>
         {' '}
         <span> Ojeador&nbsp; Deportivo</span>
-        <strong className='logo'>El slogan</strong>
+        {/* <strong className='logo'>El slogan</strong> */}
       </h1>
     </div>
   );

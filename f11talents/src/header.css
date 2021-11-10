@@ -60,7 +60,6 @@ header.principal nav ul li {
     margin-left: 0.5rem;
     border-left: 1px solid white;
     padding-left: 0.5rem;
-  
 }
 
 header.principal nav ul a {
@@ -71,10 +70,10 @@ header.principal nav ul li:first-child {
     border-left: none;
 }
 
-/* Li Buscar */
-/* header.principal nav ul li: {
-    border-left: none;
-} */
+header.principal  nav ul a.visited{
+    color: rgb(109, 238, 109);
+}
+
 
 header.principal li a:hover {
     color: rgb(109, 238, 109);
@@ -85,15 +84,12 @@ header.principal li a:hover {
 
 
 header.principal h1 .logo {
-   
    align-items: baseline;
-   
 }
 header.principal .logo {
     font-size: 3rem;
     color:rgb(109, 238, 109);
     display: inline-block;
-   
 }
 
 header.principal h1 a:hover {
