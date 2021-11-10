@@ -10,16 +10,14 @@ export default function Home() {
     return (
       <div>
         <Intro />
-   
+
         <Register />
-        {/* <SearchCase /> */}
       </div>
     );
   } else {
     return (
       <div>
         <Intro />
-        {/* <SearchCase /> */}
       </div>
     );
   }

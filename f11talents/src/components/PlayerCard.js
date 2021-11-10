@@ -10,21 +10,15 @@ export const PlayerCard = ({ resume }) => {
   let age = now.getFullYear() - parseInt(resume.birthDate);
 
   return (
-    <div id='contenedorCartas'>
-      <div className='gridContenedor'>
-        <Link to={`/profile?id=${id}`}>
-          <div className='grid-itens'>
-            <Avatar avatar={avatar} />
-            <PlayerResume
-              name={name}
-              club={club}
-              position={position}
-              skill={skills}
-              age={age}
-            />
-          </div>
-        </Link>
-      </div>
-    </div>
+    <Link to={`/profile?id=${id}`}>
+      <Avatar avatar={avatar} />
+      <PlayerResume
+        name={name}
+        club={club}
+        position={position}
+        skill={skills}
+        age={age}
+      />
+    </Link>
   );
 };
