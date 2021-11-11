@@ -1,6 +1,6 @@
 import { PlayerCard } from '../PlayerCard';
 import { useSearchProfiles } from '../../hooks/useSearchProfiles';
-import { SearchForm } from '../SearchForm';
+import { Profiles } from '../SearchForm';
 
 export default function SearchPage() {
   return (
@@ -16,7 +16,7 @@ export default function SearchPage() {
           <div id='contenedorCartas'>
             <div className='gridContenedor'></div>
 
-            <SearchForm />
+            <Profiles />
           </div>
 
           {/* {results.length > 0
