@@ -7,21 +7,34 @@ import UserProfiles from "../UserProfiles";
 import NewProfileForm from "../NewProfileForm";
 
 export default function MyAccount() {
-    const { token } = useContext(AuthTokenContext);
-    const [userAccount] = useUserAccount(token);
 
-    if (token) {
-        return (
-            <div className='App'>
-                <header className='App-header'>
-                    <div className='main'>
-                        <UserInfo resume={userAccount} />
-                        <UserProfiles />
-                        <NewProfileForm />
-                    </div>
-                </header>
+  const { token, user } = useContext(AuthTokenContext);
+  const [userAccount] = useUserAccount(token);
+
+  if (token) {
+    console.log('Role', user.role);
+    if (!user.role === 'family') {
+      return (
+        <div className='App'>
+          <header className='App-header'>
+            <div className='main'>
+              <UserInfo resume={userAccount} />
             </div>
-        );
+          </header>
+        </div>
+      );
     }
-    return <Redirect to='/login' />;
+    return (
+      <div className='App'>
+        <header className='App-header'>
+          <div className='main'>
+            <UserInfo resume={userAccount} />
+            <UserProfiles />
+  <NewProfileForm />
+          </div>
+        </header>
+      </div>
+    );
+  }
+  return <Redirect to='/login' />;
 }

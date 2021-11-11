@@ -5,20 +5,22 @@ import { useGetProfile } from '../../hooks/useGetProfile';
 import { PlayerCard } from '../PlayerCard';
 
 export default function PlayerProfilePage(props) {
-  const { token } = useContext(AuthTokenContext);
+  const { token, user } = useContext(AuthTokenContext);
   const [profileData] = useGetProfile(token, props.id);
-
+  // const profileId = Locale;
   console.log('profile', profileData);
-  if (token) {
+  if (!token) {
+    return <Redirect to='/login' />;
+  }
+  if (user.role === 'scout')
     return (
       <div className='App'>
         <header className='App-header'>
           <div className='main'>
             <PlayerCard />
+            {/* <ContactFamily/> */}
           </div>
         </header>
       </div>
     );
-  }
-  return <Redirect to='/login' />;
 }

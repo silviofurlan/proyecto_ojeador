@@ -12,8 +12,8 @@ export default function SearchPage() {
                             <span>Búsqueda de Talentos</span>
                         </h1>
                     </section>
-
-                    <div className='wrapper'>
+       
+                  <div className='wrapper'>
                         <SearchForm />
                     </div>
                 </div>
