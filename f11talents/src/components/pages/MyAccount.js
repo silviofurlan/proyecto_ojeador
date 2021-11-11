@@ -1,11 +1,13 @@
-import { Redirect } from 'react-router';
-import { useContext } from 'react/cjs/react.development';
-import { AuthTokenContext } from '../../index';
-import { useUserAccount } from '../../hooks/useUserAccount';
-import UserProfiles from '../UserProfiles';
-import { UserInfo } from '../UserInfo';
+import { Redirect } from "react-router";
+import { useContext } from "react/cjs/react.development";
+import { AuthTokenContext } from "../../index";
+import { useUserAccount } from "../../hooks/useUserAccount";
+import { UserInfo } from "../UserInfo";
+import UserProfiles from "../UserProfiles";
+import NewProfileForm from "../NewProfileForm";
 
 export default function MyAccount() {
+
   const { token, user } = useContext(AuthTokenContext);
   const [userAccount] = useUserAccount(token);
 
@@ -28,6 +30,7 @@ export default function MyAccount() {
           <div className='main'>
             <UserInfo resume={userAccount} />
             <UserProfiles />
+  <NewProfileForm />
           </div>
         </header>
       </div>
