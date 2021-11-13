@@ -21,7 +21,7 @@ export default function Home() {
       <>
         <Intro />
         <div className='wrapper'>
-          <div className='trescolumnas'>
+          <div className='tresColumnas'>
             <div>LO QUE PONGAS AQUI SOLO APARECE CUANDO ESTÁS LOGUEADA</div>
             <div>
               <img

@@ -16,8 +16,8 @@ export default function MyAccount() {
       return (
         <>
           <Banner />
-          <div className='contenedorBanner'>
-            <div className='datosBanner'>
+          <div className='contenedorWrapperPerfil'>
+            <div className='datosBienvenido'>
               <UserInfo resume={userAccount} />
             </div>
           </div>
@@ -27,9 +27,11 @@ export default function MyAccount() {
     return (
       <>
         <Banner />
-        <div className='contenedorBanner'>
-          <div className='datosBanner'>
-            <UserInfo resume={userAccount} />
+        <div className='contenedorWrapperPerfil'>
+          <div className=''>
+            <div>
+              <UserInfo className='datosBienvenido' resume={userAccount} />
+            </div>
             <UserProfiles />
           </div>
         </div>
