@@ -1,17 +1,17 @@
 import Banner from '../Banner';
-import { LoginForm } from '../LoginForm';
+import NewProfileForm from '../NewProfileForm';
 
-export default function Login() {
+export default function NewProfile() {
   return (
     <div>
       <Banner />
       <div id='contenedorBanner'>
         <div className='datosBanner'>
-          <h1>Iniciar Sesión</h1>
+          <h1>Compelta el formulário para crear el nuevo perfil</h1>
         </div>
       </div>
 
-      <LoginForm />
+      <NewProfileForm />
     </div>
   );
 }

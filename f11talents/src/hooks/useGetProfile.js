@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchData } from '../api/api';
 
-export const useGetProfile = (token, id) => {
+export const useGetProfile = (id, token) => {
   const [profileData, setProfileData] = useState([]);
   const [errorMessage, setErrorMessage] = useState();
 
@@ -12,14 +12,14 @@ export const useGetProfile = (token, id) => {
           url: `http://localhost:4000/profiles/${id}`,
           token,
         });
-
-        setProfileData(data.profile);
-        setErrorMessage();
+        setProfileData(data.profileInfo);
+        console.log('ProfileInfo', data.profileInfo);
+        // setErrorMessage();
       } catch (error) {
-        setErrorMessage(error.message);
+        // setErrorMessage(error.message);
       }
     };
     getData();
-  }, [token, id]);
+  }, [id, token]);
   return [profileData, errorMessage];
 };
