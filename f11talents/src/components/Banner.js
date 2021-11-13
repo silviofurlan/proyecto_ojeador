@@ -1,13 +1,3 @@
 export default function Banner() {
-    return (
-        <div>
-         <div id="introContenedor">
-            </div>
-           
-
-        </div>
-    );
-  }
-
-
-  
+  return <div id='introContenedor'></div>;
+}

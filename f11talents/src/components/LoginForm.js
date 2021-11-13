@@ -1,9 +1,9 @@
-
 import React, { useContext, useState } from 'react';
 import { Redirect } from 'react-router';
 import { AuthTokenContext } from '..';
 import { post } from '../api/api';
 import jwt_decode from 'jwt-decode';
+import { Link } from 'react-router-dom';
 
 export const LoginForm = (props) => {
   const [email, setEmail] = useState('');
@@ -44,42 +44,33 @@ export const LoginForm = (props) => {
 
   return (
     <>
+      <section id='datosLogin'>
+        <ul>
+          <li>
+            <form onSubmit={onSubmit} className='formLogin'>
+              <label htmlFor='email'>Email</label>
+              <input
+                type='text'
+                name='email'
+                id='email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <label htmlFor='password'>Contraseña</label>
+              <input
+                type='password'
+                name='password'
+                id='password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button type='submit'>Acceder</button>
+              {error ? <p>{error}</p> : null}
 
-      <section id="datosLogin"> 
-
-     
-      <ul>
-                <li class="avatarPerfil">
-                    {/* <section style="background-image: url(https://i.pravatar.cc/150);" class="avatar">
-                    </section> */}
-
-                </li>
-                <li>
-      <form onSubmit={onSubmit} className='formLogin'>
-
-        <label htmlFor='email'>Email</label>
-        <input
-          type='text'
-          name='email'
-          id='email'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label htmlFor='password'>Contraseña</label>
-        <input
-          type='password'
-          name='password'
-          id='password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type='submit'>Acceder</button>
-        {error ? <p>{error}</p> : null}
-
-      </form>
-      </li>
-    
-      </ul>
+              <Link to={`/recover`}>¿Has olvidado la contraseña?</Link>
+            </form>
+          </li>
+        </ul>
       </section>
     </>
   );

@@ -34,6 +34,7 @@ const getUser = async (req, res, next) => {
         profilesId: Array.from(profilesId),
       };
     }
+    console.log('USER INFO', userInfo);
     res.send({
       status: 'ok',
       userInfo,

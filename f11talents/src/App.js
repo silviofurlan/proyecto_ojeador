@@ -13,11 +13,10 @@ import ContactUs from './components/pages/ContactUs';
 import MyAccount from './components/pages/MyAccount';
 import { useContext } from 'react/cjs/react.development';
 import { AuthTokenContext } from './index';
-import MyProfiles from './components/UserProfiles';
 import PlayerProfilePage from './components/pages/PlayerProfilePage';
-
-
-
+import Recover from './components/pages/Recover';
+import Reset from './components/pages/Reset';
+import NewProfile from './components/pages/NewProfile';
 
 function App() {
   const { token, logout } = useContext(AuthTokenContext);
@@ -58,7 +57,7 @@ function App() {
 
           <nav>
             <ul className='navigation-list'>
-              <li >
+              <li>
                 <Link to='/'>Inicio</Link>
               </li>
               <li>
@@ -104,14 +103,23 @@ function App() {
           <Route path='/micuenta'>
             <MyAccount />
           </Route>
-          <Route path='/profile'>
+          <Route path='/profiles/'>
             <PlayerProfilePage />
+          </Route>
+          <Route path='/newprofile/'>
+            <NewProfile />
           </Route>
           <Route path='/register'>
             <Register />
           </Route>
           <Route path='/login'>
             <Login />
+          </Route>
+          <Route path='/recover'>
+            <Recover />
+          </Route>
+          <Route path='/reset'>
+            <Reset />
           </Route>
           <Route path='/about'>
             <AboutUs />
@@ -124,10 +132,6 @@ function App() {
           </Route>
         </Switch>
       </div>
-      
-     
-  
-
 
       <footer className='contenedor-Footer'>
         <section className='wrapper'>
@@ -210,9 +214,6 @@ function App() {
 
 export default App;
 
-
-
-
 // <div id="contenedor-ContactarMapa">
 
 // <div className="contactar">
@@ -241,7 +242,7 @@ export default App;
 //     <div className="iframeMapa"
 //        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2955.1069158820724!2d-8.740386399999956!3d42.21215949999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2589e40a58627d%3A0x35020a409ee2e444!2sEstadio%20Abanca%20Bala%C3%ADdos!5e0!3m2!1ses!2ses!4v1636304210161!5m2!1ses!2ses"
 //        width="450" height="400" style="border:0;" allowfullscreen="" loading="lazy">
- 
+
 // </div>
 
 // </div>

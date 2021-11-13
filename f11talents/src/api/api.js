@@ -91,3 +91,45 @@ export async function fetchData({ url, token }) {
     throw error;
   }
 }
+
+export const put = async ({
+  url,
+  body,
+  callback,
+  token = '',
+  onError = (e) => {
+    console.error(e);
+  },
+  onCommunicationError = (e) => {
+    console.error(e);
+  },
+}) => {
+  try {
+    const response = await fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token,
+      },
+      body: JSON.stringify(body),
+    });
+
+    const json = await response.json();
+    if (response.ok) {
+      callback(json);
+      // respuesta correcta, hacer algo con body
+    } else {
+      onError(json);
+      console.log(
+        'Codigo de estado no esperado',
+        response.status,
+        response.statusText
+      );
+      // respuesta erronea, informar al usuario?
+    }
+  } catch (msg) {
+    onCommunicationError(msg);
+    // fallo de comunicación, informar al usuario?
+    console.error('Fallo de comunicación', msg);
+  }
+};

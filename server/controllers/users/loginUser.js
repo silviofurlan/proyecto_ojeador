@@ -19,7 +19,7 @@ const loginUser = async (req, res, next) => {
 
     // Comprobamos si existe un usuario con ese email y esa contraseña.
     const [user] = await connection.query(
-      `SELECT id, role, active FROM users WHERE email = ? AND password = SHA2(?, 512)`,
+      `SELECT id, role, name, active FROM users WHERE email = ? AND password = SHA2(?, 512)`,
       [email, password]
     );
 

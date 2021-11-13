@@ -14,7 +14,7 @@ function PlayerResume(props) {
         <p>Equipo: {props.club}</p>
       </li>
       <li className='datosPerfil'>
-        <p>Habilidad: {props.skill}</p>
+        <p>Habilidades: {props.skills}</p>
       </li>
     </ul>
   );
