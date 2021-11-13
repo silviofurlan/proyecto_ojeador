@@ -1,21 +1,19 @@
+import Banner from '../Banner';
 import { SearchForm } from '../SearchForm';
 
 export default function SearchPage() {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <div className='main'>
-          <section id='introContenedor'>
-            <h1>
-              <span>Búsqueda de Talentos</span>
-            </h1>
-          </section>
-
-          <div className='wrapper'>
-            <SearchForm />
-          </div>
+    <div>
+      <Banner />
+      <div className='contenedorBanner'>
+        <div className='dataBanner'>
+          <h1>Búsqueda de Talentos</h1>
         </div>
-      </header>
+      </div>
+
+      <div className='wrapper'>
+        <SearchForm />
+      </div>
     </div>
   );
 }
