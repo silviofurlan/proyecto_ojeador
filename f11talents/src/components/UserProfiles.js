@@ -36,8 +36,8 @@ export default function UserProfiles() {
                       avatar={profile.avatar}
                       key={profile.id}
                     />
+                    <Link to={`/profiles?id=${profile.id}`}>Ver perfil</Link>
                   </div>
-                  <Link to={`/profiles?id=${profile.id}`}>Ver perfil</Link>
                 </>
               ))}
         </div>
