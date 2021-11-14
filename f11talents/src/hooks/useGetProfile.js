@@ -13,7 +13,7 @@ export const useGetProfile = (id, token) => {
           token,
         });
         setProfileData(data.profileInfo);
-        console.log('ProfileInfo', data.profileInfo);
+
         // setErrorMessage();
       } catch (error) {
         // setErrorMessage(error.message);

@@ -109,6 +109,7 @@ function App() {
           <Route path='/newprofile/'>
             <NewProfile />
           </Route>
+
           <Route path='/register'>
             <Register />
           </Route>
