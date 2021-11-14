@@ -15,7 +15,7 @@ const getUserProfiles = async (req, res, next) => {
       // Obtenemos los datos del usuario.
       [userProfiles] = await connection.query(
         `
-                SELECT profiles.*
+                SELECT profiles.name, profiles.avatar, profiles.id
                 FROM profiles
                 WHERE profiles.idUser = ?
             `,

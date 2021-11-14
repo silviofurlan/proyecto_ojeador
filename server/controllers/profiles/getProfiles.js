@@ -40,6 +40,7 @@ const getProfile = async (req, res, next) => {
       birthDate: profile[0].birthDate,
       category: profile[0].category,
       club: profile[0].club,
+      idUser: profile[0].idUser,
       photos: Array.from(photos),
       photosId: Array.from(photosId),
       videos: Array.from(videos),
