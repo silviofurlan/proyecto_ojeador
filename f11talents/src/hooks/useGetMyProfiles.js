@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { fetchData } from '../api/api';
 
 export const useGetMyProfiles = (token) => {
-  const [myProfiles, setUserAccount] = useState([]);
+  const [myProfiles, setMyProfiles] = useState([]);
   const [errorMessage, setErrorMessage] = useState();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export const useGetMyProfiles = (token) => {
           token,
         });
 
-        setUserAccount(data.userProfiles);
+        setMyProfiles(data.userProfiles);
         setErrorMessage();
       } catch (error) {
         setErrorMessage(error.message);

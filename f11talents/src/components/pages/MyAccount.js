@@ -11,7 +11,6 @@ export default function MyAccount() {
   const [userAccount] = useUserAccount(token);
 
   if (token) {
-    console.log('Role', user.role);
     if (user.role === 'scout') {
       return (
         <>

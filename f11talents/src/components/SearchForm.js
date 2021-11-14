@@ -13,7 +13,7 @@ export const SearchForm = () => {
   const [results, setResults] = useState('');
   const [initialSearch, setInitialSearch] = useState(false);
   // const [errors, setErrors] = useState({ ...DEFAULT_ERRORS });
-
+  const now = new Date();
   const handleSubmit = async (e) => {
     e.preventDefault();
     setInitialSearch(true);
@@ -22,7 +22,7 @@ export const SearchForm = () => {
       position: search_position,
       club: search_club,
       skill: search_skill,
-      age: search_age,
+      age: search_age ? now.getFullYear() - search_age : search_age,
       category: search_category,
     };
 
@@ -46,7 +46,6 @@ export const SearchForm = () => {
     };
     getData();
   };
-
   return (
     <div className='contenedor-busqueda'>
       <div className='formulario-busqueda'>
@@ -167,12 +166,8 @@ export const SearchForm = () => {
           </div>
         ) : results.length > 0 ? (
           results.map((profile) => (
-            <div>
-              <PlayerCard
-                resume={profile}
-                avatar={profile.avatar}
-                key={profile.id}
-              />
+            <div key={profile.id}>
+              <PlayerCard resume={profile} avatar={profile.avatar} />
               <Link to={`/profiles?id=${profile.id}`}>Ver perfil</Link>
             </div>
           ))

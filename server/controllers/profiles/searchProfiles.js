@@ -54,7 +54,7 @@ const searchProfiles = async (req, res, next) => {
       }
 
       if (age) {
-        conditions.push('profiles.birthDate = ?');
+        conditions.push('EXTRACT(year from profiles.birthDate) LIKE ?');
         params.push(`${age}`);
       }
 

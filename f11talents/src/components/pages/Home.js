@@ -5,8 +5,8 @@ import Register from './Register';
 import { useContext } from 'react/cjs/react.development';
 import { AuthTokenContext } from '../..';
 export default function Home() {
-  const { token, user } = useContext(AuthTokenContext);
-  console.log('USER', user);
+  const { token } = useContext(AuthTokenContext);
+
   if (!token) {
     return (
       <>
@@ -29,7 +29,7 @@ export default function Home() {
                 alt='foto'
               />
             </div>
-            <div>Olá {user.name}</div>
+            <div>Olá </div>
           </div>
         </div>
       </>
