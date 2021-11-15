@@ -11,11 +11,12 @@ const AuthTokenProvider = ({ children }) => {
   const [token, setToken] = useLocalStorage('', 'accessToken');
   const [userId, setUserId] = useLocalStorage('', 'userId');
   const [userRole, setUserRole] = useLocalStorage('', 'userRole');
-
+  const [userName, setUserName] = useLocalStorage('', 'userName');
   const logout = () => {
     setToken('');
     setUserId('');
     setUserRole('');
+    setUserName('');
   };
 
   return (
@@ -23,9 +24,10 @@ const AuthTokenProvider = ({ children }) => {
       value={{
         token,
         setToken,
-        user: { id: userId, role: userRole },
+        user: { id: userId, role: userRole, name: userName },
         setUserId,
         setUserRole,
+        setUserName,
         logout,
       }}
     >

@@ -23,17 +23,20 @@ const getProfile = async (req, res, next) => {
       [idProfile]
     );
 
-    const photos = new Set([profile[0].photos]);
-    const photosId = new Set([profile[0].photosId]);
-    const skills = new Set([profile[0].skills]);
-    const skillsId = new Set([profile[0].skillsId]);
-    const videos = new Set([profile[0].videos]);
-    const videosUrl = new Set([profile[0].videosUrl]);
-    const videosId = new Set([profile[0].videosId]);
+    const photosProfile = profile[0].photos ? profile[0].photos.split(',') : [];
+    const photosId = profile[0].photosId ? profile[0].photosId.split(',') : [];
+    const skills = profile[0].skills ? profile[0].skills.split(',') : [];
+    const skillsId = profile[0].skillsId ? profile[0].skillsId.split(',') : [];
+    const videos = profile[0].videos ? profile[0].videos.split(',') : [];
+    const videosUrl = profile[0].videosUrl
+      ? profile[0].videosUrl.split(',')
+      : [];
+    const videosId = profile[0].videosId ? profile[0].videosId.split(',') : [];
 
     // Objeto con la info del usuario.
 
     profileInfo = {
+      avatar: profile[0].avatar,
       name: profile[0].name,
       id: profile[0].id,
       position: profile[0].position,
@@ -41,21 +44,21 @@ const getProfile = async (req, res, next) => {
       category: profile[0].category,
       club: profile[0].club,
       idUser: profile[0].idUser,
-      photos: Array.from(photos),
-      photosId: Array.from(photosId),
-      videos: Array.from(videos),
-      videosId: Array.from(videosId),
-      videosUrl: Array.from(videosUrl),
-      skills: Array.from(skills),
-      skillsId: Array.from(skillsId),
+      photos: photosProfile,
+      photosId: photosId,
+      videos: videos,
+      videosId: videosId,
+      videosUrl: videosUrl,
+      skills: skills,
+      skillsId: skillsId,
     };
-
-    console.log('PROFILE', profileInfo);
     res.send({
       status: 'ok',
       profile,
       profileInfo,
     });
+
+    console.log('PROFILE', profileInfo);
   } catch (error) {
     next(error);
   } finally {

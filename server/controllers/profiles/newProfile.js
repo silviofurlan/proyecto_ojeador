@@ -17,7 +17,7 @@ const newProfile = async (req, res, next) => {
     );
 
     // Si hay 3 fotos lanzamos un error.
-    if (profiles.length >= 3) {
+    if (profiles.length >= 3 && req.userAuth.role !== 'admin') {
       const error = new Error('Solo puedes tener 3 perfiles');
       error.httpStatus = 403;
       throw error;

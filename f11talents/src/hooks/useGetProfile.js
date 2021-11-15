@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { fetchData } from '../api/api';
 
 export const useGetProfile = (id, token) => {
-  const [profileData, setProfileData] = useState([]);
+  const [profileData, setProfileData] = useState(null);
   const [errorMessage, setErrorMessage] = useState();
 
   useEffect(() => {
