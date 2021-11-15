@@ -172,9 +172,12 @@ export const SearchForm = () => {
           </div>
         ) : results.length > 0 ? (
           results.map((profile) => (
-            <div key={profile.id}>
+            <div className=' contenedorWrapperPerfilJugador ' key={profile.id}>
               <PlayerCard resume={profile} avatar={profile.avatar} />
-              <Link to={`/profiles?id=${profile.id}`}>Ver perfil</Link>
+
+              <Link to={`/profiles?id=${profile.id}`} className='div-button'>
+                Ver perfil
+              </Link>
             </div>
           ))
         ) : (

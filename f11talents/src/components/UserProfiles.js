@@ -26,14 +26,21 @@ export default function UserProfiles() {
                   <Avatar avatar={profile.avatar} />
                   <div>{profile.name}</div>
 
-                  <Link to={`/profiles?id=${profile.id}`}>Ver perfil</Link>
+                  <Link
+                    to={`/profiles?id=${profile.id}`}
+                    className='div-button'
+                  >
+                    Ver perfil
+                  </Link>
                 </div>
               </div>
             ))}
-            <Link to='/newprofile' className='userProfiles'>
+            <div>
               <Avatar />
-              <p>Añadir perfil</p>
-            </Link>
+              <Link to='/newprofile' className='div-button'>
+                <p>Añadir perfil</p>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -53,7 +60,9 @@ export default function UserProfiles() {
                 <Avatar avatar={profile.avatar} />
                 <div>{profile.name}</div>
 
-                <Link to={`/profiles?id=${profile.id}`}>Ver perfil</Link>
+                <Link to={`/profiles?id=${profile.id}`} className='div-button'>
+                  Ver perfil
+                </Link>
               </div>
             </>
           ))}
