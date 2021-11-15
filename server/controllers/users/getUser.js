@@ -33,8 +33,8 @@ const getUser = async (req, res, next) => {
         profilesName: Array.from(profilesName),
         profilesId: Array.from(profilesId),
       };
+      console.log('USER INFO', userInfo.profilesName);
     }
-    console.log('USER INFO', userInfo);
     res.send({
       status: 'ok',
       userInfo,
