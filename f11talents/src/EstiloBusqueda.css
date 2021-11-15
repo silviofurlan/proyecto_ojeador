@@ -1,67 +1,55 @@
-.contenedorCartas {
-    /* background-color: rgb(17, 203, 216); */
-    margin: auto;
-    width: 960px;
+.contenedor-busqueda {
+    margin: 1rem 0;
+    display: grid;
+    gap: 1rem;
+    margin-top: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.contenedor-busqueda .formulario-busqueda {
+    grid-column: 1/2;
+}
+
+.contenedor-busqueda .resultados-busqueda {
+    /* background-color: chartreuse; */
+    border-radius: 10px;
+    grid-column: 2/4;
+    display: grid;
+    border-radius: 10px;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
-    position: relative;
-    border-radius: 10px;
-    height: 650px;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
 }
 
-.gridContenedor {
-    /* background-color: #347d3c; */
-    display: grid;
-    margin: auto;
+.contenedor-busqueda .sin-busqueda {
+    grid-column: 1/-1;
+}
+
+.sin-busqueda {
     padding: 20px;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    grid-template-columns: auto;
 }
 
-.gridContenedor p {
-    color: rgb(5, 5, 5);
-    margin-left: 0.5rem;
-}
-
-.grid-itens {
-    /* background-color: rgb(87, 30, 30);  */
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-}
-
-.grid-item {
-    /* background-color: greenyellow;    */
-    display: block;
-    flex-direction: column;
-    border-radius: 10px;
-    margin: auto;
-    padding: 5px;
-    width: 100%;
-    gap: 20px;
+.pagSinBusqueda {
+    background-color: darkgreen;
 }
 
 .formSearch {
-    background-color: #302f2f;
+    background-color: #020202;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 30px;
-
+    padding: 20px;
     border-radius: 10px;
+}
+
+.formSearch .form-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 }
 
 .formSearch .form-input {
@@ -70,7 +58,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    width: 70%;
+    width: 100%;
     padding: 0.5rem;
     outline: none;
     color: white;
@@ -106,55 +94,6 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-}
-
-/* Grides con perfiles de jugadores */
-.avatarPerfil .avatar {
-    width: 100px;
-    height: 100px;
-    border: solid 4px rgb(41, 124, 41);
-    margin-bottom: 10px;
-    border-radius: 50%;
-}
-
-.datosPerfil {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(186, 187, 186);
-    border: solid black;
-    width: 100%;
-    border-radius: 10px;
-    gap: 50px;
-}
-
-.datosPerfil p {
-    margin: 0;
-    color: rgb(1, 1, 1);
-    text-align: center;
-}
-
-.contenedor-busqueda {
-    margin: 1rem 0;
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.contenedor-busqueda .formulario-busqueda {
-    grid-column: 1/2;
-}
-
-.contenedor-busqueda .resultados-busqueda {
-    grid-column: 2/4;
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr 1fr;
-}
-
-.contenedor-busqueda .sin-busqueda {
-    grid-column: 1/-1;
 }
 
 /* Paginacion ContenedorCartas*/

@@ -71,7 +71,7 @@ h2 {
 .trescolumnas {
     display: grid;
     gap: 1rem;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     margin: 1rem;
 }
 
@@ -159,53 +159,34 @@ main > section {
     padding: 10px;
 }
 
-/* Contenedor Formulario de Búsqueda */
-.formBusqueda {
-    background-color: rgb(253, 245, 233);
-    border-radius: 10px;
-    width: 480px;
-    height: 580px;
+/* Pagina Home */
+
+.pagHome {
+    /* background-color: darkgoldenrod; */
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
 }
 
-.formBusqueda h1 {
-    text-align: center;
+.filaTexto {
+    padding: 20px;
 }
 
-/* FORMULARIO BÚSQUEDA */
-.formBusqueda label {
-    font-weight: bold;
-    display: block;
-    margin: 1rem 0;
+.casosExito {
+    background-color: darkgray;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
-.formBusqueda input {
-    background: gray;
-    border-radius: 10px;
-    border: none;
-    margin: 0 auto;
-    width: 100%;
-    padding: 1rem;
-    outline: none;
-    color: white;
+.columnas {
 }
-
-.formBusqueda input::placeholder {
-    color: darkgray;
-}
-
-.formBusqueda button {
-    background: gray;
-    font-weight: bold;
-    color: white;
-    border-radius: 10px;
-    border: none;
-    padding: 1rem 4rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3rem;
-    display: block;
-}
-
 /* 
 .quienDirigida .divisoria {
   height: 1px;

@@ -201,7 +201,7 @@ function App() {
                     </article>
                 </section>
 
-                <div className='divisoria'></div>
+                <div className='divisoriaFooter'></div>
 
                 <div className='pieNota'>
                     <p>

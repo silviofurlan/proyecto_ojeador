@@ -25,8 +25,8 @@
 .avatarUsuario {
     background-color: green;
     gap: 1rem;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 120px;
 }
 
@@ -52,7 +52,7 @@
 /*######### Datos Personales Editar y Guardar */
 
 .contenedorWrapperPerfil {
-    /* background-color: grey; */
+    background-color: grey;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
     margin: auto;
     margin-top: 10px;
@@ -126,7 +126,7 @@
 /*######### Cartas #########*/
 
 .contenedorWrapperCartas {
-    background-color: rgb(138, 201, 75);
+    /* background-color: rgb(138, 201, 75); */
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
     margin: auto;
     margin-top: 10px;
@@ -152,7 +152,87 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.contenedorCartas {
+    /* background-color: rgb(17, 203, 216); */
+    margin: auto;
+    width: 960px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 10px;
+    height: 650px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.gridContenedor {
+    /* background-color: #347d3c; */
+    display: grid;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    grid-template-columns: auto;
+}
+
+.gridContenedor p {
+    color: rgb(5, 5, 5);
+    margin-left: 0.5rem;
+}
+
+.grid-itens {
+    /* background-color: rgb(87, 30, 30);  */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.grid-item {
+    /* background-color: greenyellow;    */
+    display: block;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: auto;
+    padding: 5px;
+    width: 100%;
+    gap: 20px;
+}
 /* Sesion crear Perfil */
+
+.contenedorWrapperPrincipalPerfil {
+    /* background-color: grey; */
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    margin-top: 10px;
+    display: grid;
+    gap: 1rem;
+    max-width: 960px;
+    min-height: 10vh;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.contenedorWrapperPerfil {
+    padding: 30px;
+}
+
+.contenedorWrapperPerfilJugador {
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    margin-top: 10px;
+    display: grid;
+    gap: 1rem;
+    max-width: 960px;
+    min-height: 10vh;
+    padding: 20px;
+    border-radius: 10px;
+}
 
 .contenedorWrapperCrearPerfil {
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
@@ -241,6 +321,56 @@
     border-radius: 10px;
 
     cursor: pointer;
+}
+
+/*  Resumo de las cartas Jugadores*/
+/* Grides con perfiles de jugadores */
+.avatarPerfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.avatarPerfil .avatar {
+    width: 120px;
+    height: 120px;
+    border: solid 4px rgb(41, 124, 41);
+    margin-bottom: 10px;
+    border-radius: 50%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.botonVerPerfil .Link {
+    background-color: chartreuse;
+    display: flex;
+    width: 80%;
+}
+
+.botonVerPerfil p {
+    text-decoration: chartreuse;
+}
+.datosCartas {
+    /* background-color: cadetblue; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.datosPerfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(186, 187, 186);
+
+    width: 100%;
+    border-radius: 10px;
+}
+
+.datosPerfil p {
+    margin: 0;
+    color: rgb(1, 1, 1);
+    text-align: center;
 }
 
 /*######### Formumlario #########*/

@@ -1,13 +1,11 @@
-
-
 footer.contenedor-Footer {
     background-color: black;
     padding: 10px;
-}  
+}
 
 footer.contenedor-Footer p {
     color: white;
-    text-align:center;
+    text-align: center;
 }
 
 footer.contenedor-Footer .wrapper {
@@ -19,7 +17,6 @@ footer.contenedor-Footer .wrapper {
     min-height: 10px;
 }
 
-
 footer.contenedor-Footer .wrapper h2 {
     flex: 0 0 auto;
     margin: 0;
@@ -28,17 +25,18 @@ footer.contenedor-Footer .wrapper h2 {
     justify-content: center;
 }
 
-
-footer.contenedor-Footer,ul, section > ul {
+footer.contenedor-Footer,
+ul,
+section > ul {
     list-style: none;
     padding: 0;
 }
 
-footer .navFooter li a{
+footer .navFooter li a {
     padding: 10px;
     color: blanchedalmond;
     text-decoration: none;
-    transition: color .3s ease;
+    transition: color 0.3s ease;
 }
 
 footer .navFooter li a:hover {
@@ -55,16 +53,16 @@ footer .navFooter {
     margin-right: auto;
 }
 
- footer .navFooter li::before {
+footer .navFooter li::before {
     content: "";
     display: inline-block;
-    width:  4px;
+    width: 4px;
     height: 4px;
     margin-right: 2px;
     border-radius: 50%;
     background-color: greenyellow;
     vertical-align: middle;
-}  
+}
 
 footer .contactos {
     display: flex;
@@ -86,28 +84,27 @@ footer .navLegal {
     margin-right: auto;
 }
 
-footer .navLegal li a{
+footer .navLegal li a {
     padding: 10px;
     color: blanchedalmond;
     text-decoration: none;
-    transition: color .3s ease;
+    transition: color 0.3s ease;
 }
 
 footer .navLegal li a:hover {
     color: rgb(109, 238, 109);
 }
 
-
 footer .navLegal li::before {
     content: "";
     display: inline-block;
-    width:  4px;
+    width: 4px;
     height: 4px;
     margin-right: 2px;
     border-radius: 50%;
     background-color: greenyellow;
     vertical-align: middle;
-}  
+}
 
 footer .siguenos {
     justify-content: space-around;
@@ -116,9 +113,8 @@ footer .siguenos {
     list-style: none;
 }
 
-.iconosSiguenos  {
+.iconosSiguenos {
     margin-left: 1rem;
-
 }
 .iconosSiguenos a {
     color: blanchedalmond;
@@ -127,28 +123,29 @@ footer .siguenos {
 }
 
 .iconosSiguenos a:hover {
-    color:greenyellow;
+    color: greenyellow;
     list-style: none;
     padding: 0;
 }
 
-footer .divisoria, hr{
+footer .divisoriaFooter,
+hr {
     height: 1px;
     background-color: blanchedalmond;
 }
 
-footer .pieNota{
-   background-color: black;
-   margin-top: 5px;
-   padding: 15px;
+footer .pieNota {
+    background-color: black;
+    margin-top: 5px;
+    padding: 15px;
 }
 
 footer .logo {
-    color:rgb(109, 238, 109);
+    color: rgb(109, 238, 109);
     display: inline-block;
-    animation: fadeEnter .5s ease both 0.25s;
+    animation: fadeEnter 0.5s ease both 0.25s;
 }
 
-footer .pieNota.logo{
-    font-size: 'Amatic SC';
+footer .pieNota.logo {
+    font-size: "Amatic SC";
 }
