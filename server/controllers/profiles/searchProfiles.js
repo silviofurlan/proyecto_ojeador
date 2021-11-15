@@ -78,7 +78,7 @@ const searchProfiles = async (req, res, next) => {
       params
     );
 
-    console.log('search', req.query);
+    console.log('search', results);
     res.send({
       status: 'ok',
       results,
