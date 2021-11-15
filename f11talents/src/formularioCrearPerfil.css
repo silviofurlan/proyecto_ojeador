@@ -1,0 +1,118 @@
+/*######### Formumlario Crear Perfil #########*/
+
+.contenedorWrapperFormCrearPerfil {
+    background-color: grey;
+    margin: auto;
+    display: grid;
+    gap: 1rem;
+    min-height: 10vh;
+}
+.crearPerfilForm {
+    background-color: rgb(116, 67, 152);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    background-color: black;
+}
+
+.columna-izquierdaForm {
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    flex-direction: column;
+}
+
+.columna-derechaForm {
+    background-color: grey;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    flex-direction: column;
+}
+
+.formPerfil {
+    border-radius: 0 10px 10px 0;
+    padding: 20px;
+    background: linear-gradient(
+        90deg,
+        rgb(40, 40, 40) 0%,
+        rgb(17, 17, 17) 100%
+    );
+}
+
+label {
+    display: inline-block;
+    width: 80px;
+}
+.formPerfil h1 {
+    text-align: center;
+    width: 80%;
+    color: greenyellow;
+}
+.formPerfil .form-inputs p {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    color: gray;
+}
+
+.formPerfil .form-label {
+    display: inline-block;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    font-size: large;
+}
+
+.formPerfil .form-input {
+    background-color: gray;
+    border-radius: 10px;
+    width: 70%;
+    padding: 0.5rem;
+    outline: none;
+    color: white;
+    font-size: large;
+}
+
+.formPerfil .form-input::placeholder {
+    color: #595959;
+    font-size: 12px;
+}
+
+.formPerfil .form-input-btn {
+    width: 80%;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin: auto 10%;
+    background: chartreuse;
+    outline: none;
+    border: none;
+    color: black;
+    font-size: 1rem;
+}
+.formPerfil .form-input-btn:hover {
+    cursor: pointer;
+    background: linear-gradient(
+        90deg,
+        rgb(59, 163, 33) 100%,
+        rgb(22, 104, 2) 100%
+    );
+    transition: all 0.4s ease-out;
+    cursor: pointer;
+}
+
+.formPerfil .form-input-login {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    color: #fff;
+    width: 80%;
+    text-align: center;
+}
+.formPerfil .form-input-login a {
+    text-decoration: none;
+    color: #27cdff;
+    font-weight: 600;
+}

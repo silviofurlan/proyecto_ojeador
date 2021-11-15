@@ -1,0 +1,131 @@
+/*******Formulario de Registro*****/
+.form-container {
+    /* background-color: rgb(175, 173, 177); */
+    margin: auto;
+    width: 960px;
+    display: flex;
+    margin: auto;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 10px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.form-content-left-Home {
+    background-color: greenyellow;
+    border-radius: 0 10px 10px 0;
+    position: relative;
+    border-radius: 10px 0px 0;
+    padding: 50px;
+}
+
+.form-content-left-Home h1 {
+    color: black;
+    font-style: normal;
+    font-family: "Trebuchet MS";
+    margin-top: 70px;
+    margin-bottom: 60px;
+}
+.form-content-right {
+    border-radius: 0 10px 10px 0;
+    position: relative;
+    background: linear-gradient(
+        90deg,
+        rgb(40, 40, 40) 0%,
+        rgb(17, 17, 17) 100%
+    );
+}
+
+.form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    width: 80%;
+    color: greenyellow;
+}
+
+.form-inputs {
+    margin-bottom: 0.5rem;
+    gap: 20px;
+    width: 80%;
+}
+
+.form-inputs p {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    color: gray;
+}
+
+.form-label {
+    display: inline-block;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    color: rgb(254, 254, 254);
+    font-size: large;
+}
+
+.form-input {
+    display: block;
+    margin-bottom: 20px;
+    outline: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 100%;
+    border: none;
+    padding: 0.5rem;
+    font-size: large;
+}
+
+.form-input::placeholder {
+    color: #595959;
+    font-size: 12px;
+}
+
+.form-input-btn {
+    width: 80%;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: chartreuse;
+
+    outline: none;
+    border: none;
+    color: black;
+    font-size: 1rem;
+}
+.form-input-btn:hover {
+    cursor: pointer;
+    background: linear-gradient(
+        90deg,
+        rgb(59, 163, 33) 100%,
+        rgb(22, 104, 2) 100%
+    );
+    transition: all 0.4s ease-out;
+}
+
+.form-input-login {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    color: #fff;
+    width: 80%;
+    text-align: center;
+}
+
+.form-input-login a {
+    text-decoration: none;
+    color: #27cdff;
+    font-weight: 600;
+}
