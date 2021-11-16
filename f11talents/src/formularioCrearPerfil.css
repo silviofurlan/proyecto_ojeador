@@ -1,41 +1,25 @@
 /*######### Formumlario Crear Perfil #########*/
 
 .contenedorWrapperFormCrearPerfil {
-    background-color: grey;
-    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 10px;
     display: grid;
     gap: 1rem;
-    min-height: 10vh;
-}
-.crearPerfilForm {
-    background-color: rgb(116, 67, 152);
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr 1fr;
-    padding: 10px;
-    background-color: black;
+    padding: 20px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-.columna-izquierdaForm {
-    background-color: grey;
+.wrapperformPerfil {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    width: 100%;
-    flex-direction: column;
-}
-
-.columna-derechaForm {
-    background-color: grey;
-    display: flex;
-    gap: 1rem;
-    width: 100%;
-    flex-direction: column;
 }
 
 .formPerfil {
-    border-radius: 0 10px 10px 0;
+    width: 100%;
+    border-radius: 10px;
     padding: 20px;
     background: linear-gradient(
         90deg,
@@ -46,11 +30,10 @@
 
 label {
     display: inline-block;
-    width: 80px;
 }
 .formPerfil h1 {
     text-align: center;
-    width: 80%;
+    margin-left: 10%;
     color: greenyellow;
 }
 .formPerfil .form-inputs p {
@@ -69,31 +52,50 @@ label {
 .formPerfil .form-input {
     background-color: gray;
     border-radius: 10px;
-    width: 70%;
+    width: 100%;
     padding: 0.5rem;
     outline: none;
     color: white;
     font-size: large;
 }
 
+.form-textArea {
+    background-color: gray;
+    border-radius: 10px;
+    width: 100%;
+    padding: 0.5rem;
+    outline: none;
+    color: white;
+    font-size: large;
+}
 .formPerfil .form-input::placeholder {
     color: #595959;
     font-size: 12px;
 }
 
-.formPerfil .form-input-btn {
-    width: 80%;
-    height: 40px;
-    margin-top: 10px;
+.botonCrear {
+    width: 100%;
+    padding: 10px;
     border-radius: 10px;
-    margin: auto 10%;
-    background: chartreuse;
-    outline: none;
-    border: none;
-    color: black;
-    font-size: 1rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.formPerfil .form-input-btn:hover {
+.formPerfil .form-input-boton {
+    background: chartreuse;
+    font-weight: bold;
+    width: 70%;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.formPerfil .form-input-boton:hover {
     cursor: pointer;
     background: linear-gradient(
         90deg,
@@ -102,8 +104,46 @@ label {
     );
     transition: all 0.4s ease-out;
     cursor: pointer;
+    color: blanchedalmond;
 }
 
+.botonVolver {
+    width: 960px;
+    margin: auto;
+    background: chartreuse;
+    display: flex;
+    justify-content: end;
+    font-weight: bold;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.butvolver button {
+    background: linear-gradient(
+        90deg,
+        rgb(59, 163, 33) 100%,
+        rgb(22, 104, 2) 100%
+    );
+    outline: none;
+    cursor: pointer;
+}
+
+.butvolver .butvolver:hover {
+    cursor: pointer;
+
+    transition: all 0.4s ease-out;
+    cursor: pointer;
+    color: blanchedalmond;
+}
+
+.butvolver a {
+    outline: none;
+}
 .formPerfil .form-input-login {
     font-size: 0.8rem;
     margin-top: 10px;

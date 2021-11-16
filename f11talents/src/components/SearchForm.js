@@ -175,7 +175,7 @@ export const SearchForm = () => {
                 ) : results.length > 0 ? (
                     results.map((profile) => (
                         <div
-                            className=' contenedorWrapperPerfilJugador '
+                            className='contenedorWrapperPerfilJugador'
                             key={profile.id}
                         >
                             <PlayerCard
