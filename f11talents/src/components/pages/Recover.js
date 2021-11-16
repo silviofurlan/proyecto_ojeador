@@ -6,10 +6,15 @@ export default function Recover() {
         <>
             <div>
                 <Divisoria />
-                <div className='datosBanner'>
-                    <h1>Recupera tu cuenta</h1>
+                <div className='contenedorBanner'>
+                    <div className='datosBanner'>
+                        <h1>Recupera tu cuenta</h1>
+                    </div>
                 </div>
-                <RecoverPassword />
+
+                <div className='wrapper'>
+                    <RecoverPassword />
+                </div>
             </div>
         </>
     );

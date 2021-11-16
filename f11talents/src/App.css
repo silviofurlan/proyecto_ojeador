@@ -1,363 +1,435 @@
 /* @import 'normalize.css'; */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700&display=swap');
-@import 'icons.css';
-@import 'header.css';
-@import 'footer.css';
-@import 'estiloBusqueda.css';
-@import 'users.css';
-@import 'formularioCrearPerfil.css';
-@import 'formularioLogin.css';
-@import 'formularioRegistro.css';
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700&display=swap");
+@import "icons.css";
+@import "header.css";
+@import "footer.css";
+@import "estiloBusqueda.css";
+@import "users.css";
+@import "formularioCrearPerfil.css";
+@import "formularioLogin.css";
+@import "formularioRegistro.css";
 
 @font-face {
-  font-family: 'Amatic SC';
-  src: url('fonts/AmaticSC-Bold.eot');
-  src: url('fonts/AmaticSC-Bold.eot?#iefix') format('embedded-opentype'),
-    url('fonts/AmaticSC-Bold.woff2') format('woff2'),
-    url('fonts/AmaticSC-Bold.woff') format('woff'),
-    url('fonts/AmaticSC-Bold.ttf') format('truetype'),
-    url('fonts/AmaticSC-Bold.svg#Amatic SC Bold') format('svg');
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  unicode-range: U+0020-2044;
+    font-family: "Amatic SC";
+    src: url("fonts/AmaticSC-Bold.eot");
+    src: url("fonts/AmaticSC-Bold.eot?#iefix") format("embedded-opentype"),
+        url("fonts/AmaticSC-Bold.woff2") format("woff2"),
+        url("fonts/AmaticSC-Bold.woff") format("woff"),
+        url("fonts/AmaticSC-Bold.ttf") format("truetype"),
+        url("fonts/AmaticSC-Bold.svg#Amatic SC Bold") format("svg");
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-2044;
 }
 
 @font-face {
-  font-family: 'Amatic SC';
-  src: url('fonts/AmaticSC-Regular.eot');
-  src: url('fonts/AmaticSC-Regular.eot?#iefix') format('embedded-opentype'),
-    url('fonts/AmaticSC-Regular.woff2') format('woff2'),
-    url('fonts/AmaticSC-Regular.woff') format('woff'),
-    url('fonts/AmaticSC-Regular.ttf') format('truetype'),
-    url('fonts/AmaticSC-Regular.svg#Amatic SC Regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  unicode-range: U+0020-2044;
+    font-family: "Amatic SC";
+    src: url("fonts/AmaticSC-Regular.eot");
+    src: url("fonts/AmaticSC-Regular.eot?#iefix") format("embedded-opentype"),
+        url("fonts/AmaticSC-Regular.woff2") format("woff2"),
+        url("fonts/AmaticSC-Regular.woff") format("woff"),
+        url("fonts/AmaticSC-Regular.ttf") format("truetype"),
+        url("fonts/AmaticSC-Regular.svg#Amatic SC Regular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-2044;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
 }
 
 h1,
 h2 {
-  font-family: 'Amatic SC', 'Courier New', Courier, monospace;
-  color: #7fc97f;
-  font-weight: bold;
+    font-family: "Amatic SC", "Courier New", Courier, monospace;
+    color: #7fc97f;
+    font-weight: bold;
 }
 
 .wrapper {
-  width: 960px;
-  margin: auto;
+    width: 960px;
+    margin: auto;
 }
 
 .doscolumnas {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr;
-  margin: 1rem 0;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    margin: 1rem 0;
 }
 
 .trescolumnas {
-  display: grid;
-  gap: 1rem;
-  grid-template-rows: 1fr 1fr 1fr;
-  margin: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 1rem;
 }
 
 /* quita los puntos de la lista. Con hijo directo */
 section > ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 /******************* Seccion Banner *****************/
 
 .intro {
-  margin-top: 100px;
-  min-height: 30vh;
-  background-image: url('images/header-image.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+    margin-top: 100px;
+    min-height: 30vh;
+    background-image: url("images/header-image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .intro::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* h1 está por debajo del fondo */
 .intro h1 {
-  text-transform: uppercase;
-  position: relative;
-  color: white;
-  font-size: 50px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    color: white;
+    font-size: 50px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
 }
 
 .intro h1 span {
-  animation: fadeEnter 0.5s ease both 0.25s;
-  display: block;
+    animation: fadeEnter 0.5s ease both 0.25s;
+    display: block;
 }
 
 .intro .logo {
-  font-size: 1em;
+    font-size: 1em;
 }
 
 .intro h1 strong {
-  display: block;
-  color: #7fc97f;
-  font-family: 'Amatic SC';
-  text-align: center;
+    display: block;
+    color: #7fc97f;
+    font-family: "Amatic SC";
+    text-align: center;
 }
 
 .intro .logo {
-  animation: fadeEnter 0.5s ease both 0.25s;
-  display: block;
-  justify-content: center;
+    animation: fadeEnter 0.5s ease both 0.25s;
+    display: block;
+    justify-content: center;
 }
 
 .imagenCuerpo {
-  margin: 0;
-  min-height: 30vh;
-  background-image: url('images/header-image.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  z-index: 1;
+    margin: 0;
+    min-height: 30vh;
+    background-image: url("images/header-image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
 }
 
 /******************* main *****************/
 main section h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 main > section {
-  padding: 10px;
+    padding: 10px;
 }
 
 /* Pagina Home */
 
 .pagHome {
-  /* background-color: darkgoldenrod; */
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  gap: 20px;
+    /* background-color: darkgoldenrod; */
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 .filaTexto {
-  padding: 20px;
+    padding: 15px;
+    text-align: justify;
 }
 
-.casosExito {
-  background-color: darkgray;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
+.fotoHome {
+    background-color: darkgray;
+    padding: 10px;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: row;
+    gap: 20px;
 }
 
-.columnas {
+.foto {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    background-color: forestgreen;
+    border-radius: 10px;
+    width: 100%;
+    height: 10vh;
+    background-image: url("images/header-image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotateY(180deg);
+    position: relative;
 }
-/* 
-.quienDirigida .divisoria {
-  height: 1px;
-  background-color: rgb(95, 94, 92);
+
+/* .foto::before {
+    content: "";
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+} */
+.contenedorWrapperContactarMapa {
+    margin: auto;
+    margin-top: 10px;
+    display: grid;
+    gap: 1rem;
+    max-width: 960px;
+    min-height: 10vh;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
-*/
+.contenedorWrapperContactar {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    margin-top: 10px;
+    display: grid;
+    gap: 1rem;
+    max-width: 960px;
+    min-height: 10vh;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.filaTextoContactar {
+    padding: 30px;
+    text-align: justify;
+}
+.datosContactar h1 {
+    text-align: left;
+}
 
 /******************* Seccion 4 *****************/
-#contenedor-ContactarMapa {
-  /* background-color:rgb(37, 59, 37); */
-  display: flex;
-  margin: auto;
-  max-width: 960px;
-  min-height: 480px;
-}
-
-.contactar {
-  /* background-color: cadetblue; */
-  margin: auto;
-  width: 50%;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
-  position: relative;
-  border: solid black;
-  height: 600px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.contactar h1 {
-  text-align: center;
+.contenedor-ContactarMapa {
+    max-width: 960px;
+    min-height: 480px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
 }
 
 /* formulario */
 /* FORMULARIO Contacto */
+
+.formulario {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    background: linear-gradient(
+        90deg,
+        rgb(40, 40, 40) 0%,
+        rgb(17, 17, 17) 100%
+    );
+
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.mapa {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    background-color: forestgreen;
+    border-radius: 10px;
+    width: 100%;
+    background-image: url("images/futbol-ninos.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotateY(180deg);
+    position: relative;
+}
+
+.formContactar {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .formContactar label {
-  color: lightgoldenrodyellow;
-  font-weight: bold;
-  display: block;
-  margin: 1rem 0;
+    color: lightgoldenrodyellow;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    display: block;
+    margin: 1rem 0;
+    width: 100%;
 }
 
 .formContactar input {
-  background: rgb(231, 227, 227);
-  border-radius: 10px;
-  border: none;
-  margin: 0 auto;
-  width: 100%;
-  padding: 1rem;
-  outline: none;
-  color: white;
+    background: rgb(231, 227, 227);
+    border-radius: 10px;
+    border: none;
+    margin: 0 auto;
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    color: white;
 }
-
-/* .formContactar input::placeholder {
-    color: darkgray;
-} */
 
 .formContactar textarea {
-  background-color: #e7e3e3;
-  display: inline-block;
-  border-radius: 10px;
-  border: none;
-  margin: 0 auto;
-  width: 100%;
-  padding: 1rem;
-  outline: none;
-  color: white;
+    background-color: #e7e3e3;
+    display: inline-block;
+    border-radius: 10px;
+    border: none;
+    margin: 0 auto;
+    width: 100%;
+    height: 700%;
+    padding: 1rem;
+    outline: none;
+    color: white;
 }
 .formContactar button {
-  background: rgb(231, 227, 227);
-  font-weight: bold;
-  color: gray;
-  border-radius: 10px;
-  border: none;
-  padding: 1rem 4rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3rem;
-  display: block;
+    background: chartreuse;
+    font-weight: bold;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
+    margin-top: 10px;
+}
+
+.form-input-btn:hover {
+    cursor: pointer;
+    color: honeydew;
+    background: linear-gradient(
+        90deg,
+        rgb(59, 163, 33) 100%,
+        rgb(22, 104, 2) 100%
+    );
+    transition: all 0.4s ease-out;
 }
 
 /* Mapa  */
 .contenedorMapa {
-  /* background-color: cadetblue; */
-  margin: auto;
-  width: 50%;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
-  position: relative;
-  height: 600px;
-  display: grid;
-  border: solid black;
-  grid-template-columns: 1fr 1fr;
+    /* background-color: cadetblue; */
+    margin: auto;
+    width: 50%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    height: 600px;
+    display: grid;
+    border: solid black;
+    grid-template-columns: 1fr 1fr;
 }
 
 .contenedorMapa h1 {
-  text-align: center;
+    text-align: center;
 }
 
 .iframeMapa {
-  border-radius: 10px;
+    border-radius: 10px;
 }
 
 .divisoria {
-  margin-top: 100px;
-  min-height: 1vh;
+    margin-top: 100px;
+    min-height: 1vh;
 }
 
 /* Página Login */
 
 /******************* Seccion Banner *****************/
 .contenedorBanner {
-  background-color: #5ac95a;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.2);
-  margin: auto;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  max-width: 960px;
-  min-height: 10vh;
+    background-color: #5ac95a;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    max-width: 960px;
+    min-height: 10vh;
 }
 
 .datosBanner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 .datosBanner h1 {
-  color: black;
-  font-size: 2.5em;
+    color: black;
+    font-size: 2.5em;
 }
 
 /* Página contactar */
 
-.datosContactar {
-  margin: auto;
-  width: 960px;
-  height: 20vh;
-  padding: 20px;
-}
+/* .pagContactar {
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  padding: 45px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+} */
 
-.datosContactar h1 {
-  text-align: left;
-}
-.datosContactar p {
-  text-align: left;
-  color: #595959;
-}
 /*##############Animación #################*/
 
 @keyframes fadeEnter {
-  from {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 960px) and (orientacion: portrait) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  body {
-    padding-top: 160px;
-  }
-  nav ul li:nth-child(3) {
-    order: -1;
-  }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    body {
+        padding-top: 160px;
+    }
+    nav ul li:nth-child(3) {
+        order: -1;
+    }
 }
 
 /* sombra */

@@ -11,7 +11,11 @@ export default function Login() {
                 </div>
             </div>
 
-            <LoginForm />
+            <div className='wrapper'>
+                <div className='contenedorWrapperLogin'>
+                    <LoginForm />
+                </div>
+            </div>
         </div>
     );
 }

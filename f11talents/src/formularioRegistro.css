@@ -1,19 +1,21 @@
-/*******Formulario de Registro*****/
+/*******Formulario de Registro  *****/
 .form-container {
     /* background-color: rgb(175, 173, 177); */
     margin: auto;
     width: 960px;
     display: flex;
     margin: auto;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
     position: relative;
     border-radius: 10px;
-    height: 600px;
+    height: 620px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    gap: 10px;
 }
 .form-content-left-Home {
-    background-color: greenyellow;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    background-color: #5dd35d;
     border-radius: 0 10px 10px 0;
     position: relative;
     border-radius: 10px 0px 0;
@@ -27,7 +29,13 @@
     margin-top: 70px;
     margin-bottom: 60px;
 }
+
+.videoHome {
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
 .form-content-right {
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
     border-radius: 0 10px 10px 0;
     position: relative;
     background: linear-gradient(
@@ -96,7 +104,7 @@
 
 .form-input-btn {
     width: 80%;
-    height: 50px;
+    height: 40px;
     margin-top: 10px;
     border-radius: 10px;
     background: chartreuse;
